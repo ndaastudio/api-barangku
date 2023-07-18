@@ -82,14 +82,19 @@ class LoginController extends Controller
         $validatedData = [
             [
                 'nomor_telepon' => 'required|numeric',
-                'password' => 'required|min:8|max:16',
+                'password_lama' => 'required',
+                'password_baru' => 'required|min:8|max:16',
+                'konfirmasi_password_baru' => 'required|same:password_baru',
             ],
             [
                 'nomor_telepon.required' => 'Nomor telepon tidak boleh kosong',
                 'nomor_telepon.numeric' => 'Nomor telepon harus berupa angka',
-                'password.required' => 'Password tidak boleh kosong',
-                'password.min' => 'Password minimal 8 karakter',
-                'password.max' => 'Password maksimal 16 karakter',
+                'password_lama.required' => 'Password lama tidak boleh kosong',
+                'password_baru.required' => 'Password baru tidak boleh kosong',
+                'password_baru.min' => 'Password baru minimal 8 karakter',
+                'password_baru.max' => 'Password baru maksimal 16 karakter',
+                'konfirmasi_password_baru.required' => 'Konfirmasi password baru tidak boleh kosong',
+                'konfirmasi_password_baru.same' => 'Konfirmasi password baru harus sama dengan password baru',
             ]
         ];
         $validator = Validator::make($request->all(), $validatedData[0], $validatedData[1]);
@@ -113,7 +118,7 @@ class LoginController extends Controller
             ], 401);
         }
         $isValidAkun->update([
-            'password' => Crypt::encryptString($request->password, env('APP_KEY')),
+            'password' => Crypt::encryptString($request->password_baru, env('APP_KEY')),
         ]);
         return response()->json([
             'status' => true,
