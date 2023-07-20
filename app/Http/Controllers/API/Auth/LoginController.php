@@ -117,6 +117,12 @@ class LoginController extends Controller
                 'message' => 'Akun belum diaktivasi',
             ], 401);
         }
+        if ($request->password_lama !== Crypt::decryptString($isValidAkun->first()->password, env('APP_KEY'))) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Password lama salah',
+            ], 401);
+        }
         $isValidAkun->update([
             'password' => Crypt::encryptString($request->password_baru, env('APP_KEY')),
         ]);
