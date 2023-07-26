@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\API\Auth\LoginController;
-use App\Http\Controllers\API\Auth\MailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\SinkronController;
+use App\Http\Controllers\API\Auth\MailController;
+use App\Http\Controllers\API\Auth\LoginController;
 use App\Http\Controllers\API\Auth\RegisterController;
 
 /*
@@ -23,9 +24,18 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
     Route::post('/logout', [LoginController::class, 'logoutAkun']);
     Route::post('/ganti-pw', [LoginController::class, 'directGantiPw']);
+    Route::get('/download-data/{id}', [SinkronController::class, 'downloadData']);
+    Route::delete('/barang/delete/{id}', [SinkronController::class, 'deleteAllBarang']);
+    Route::post('/barang/upload', [SinkronController::class, 'upDataBarang']);
+    Route::delete('/gambar-barang/delete/{id}', [SinkronController::class, 'deleteAllGambarBarang']);
+    Route::post('/gambar-barang/upload', [SinkronController::class, 'upDataGambarBarang']);
+    Route::delete('/jasa/delete/{id}', [SinkronController::class, 'deleteAllJasa']);
+    Route::post('/jasa/upload', [SinkronController::class, 'upDataJasa']);
+    Route::delete('/gambar-jasa/delete/{id}', [SinkronController::class, 'deleteAllGambarJasa']);
+    Route::post('/gambar-jasa/upload', [SinkronController::class, 'upDataGambarJasa']);
 });
 
-Route::get('/kode-daftar', [RegisterController::class, 'getAkunByKodeDaftar']);
+Route::get('/kode-daftar/{kode_daftar}', [RegisterController::class, 'getAkunByKodeDaftar']);
 Route::post('/register', [RegisterController::class, 'registerAkun']);
 Route::post('/login', [LoginController::class, 'loginAkun']);
 Route::post('/lupa-password', [MailController::class, 'sendKodeLupaPw']);

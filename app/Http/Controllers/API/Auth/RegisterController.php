@@ -10,24 +10,9 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    public function getAkunByKodeDaftar(Request $request)
+    public function getAkunByKodeDaftar(string $kode_daftar)
     {
-        $validatedData = [
-            [
-                'kode_daftar' => 'required',
-            ],
-            [
-                'kode_daftar.required' => 'Kode daftar tidak boleh kosong',
-            ]
-        ];
-        $validator = Validator::make($request->all(), $validatedData[0], $validatedData[1]);
-        if ($validator->fails()) {
-            return response()->json([
-                'status' => false,
-                'message' => $validator->errors()->first(),
-            ], 401);
-        }
-        $isValidKodeDaftar = Akun::where('kode_daftar', $request->kode_daftar);
+        $isValidKodeDaftar = Akun::where('kode_daftar', $kode_daftar);
         if (!$isValidKodeDaftar->exists()) {
             return response()->json([
                 'status' => false,
