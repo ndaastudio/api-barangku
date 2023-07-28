@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/jasa/upload', [SinkronController::class, 'upDataJasa']);
     Route::delete('/gambar-jasa/hapus/{id}', [SinkronController::class, 'deleteAllGambarJasa']);
     Route::post('/gambar-jasa/upload', [SinkronController::class, 'upDataGambarJasa']);
-    Route::put('/akun/sinkron/{id}', [SinkronController::class, 'upDatetimeSinkron']);
+    Route::post('/akun/sinkron', [SinkronController::class, 'upDatetimeSinkron']);
 });
 
 Route::get('/kode-daftar/{kode_daftar}', [RegisterController::class, 'getAkunByKodeDaftar']);

@@ -217,15 +217,32 @@ class SinkronController extends Controller
         ], 201);
     }
 
-    public function upDatetimeSinkron(string $id)
+    public function upDatetimeSinkron(Request $request)
     {
+        $validatedData = [
+            [
+                'akun_id' => 'required',
+            ],
+            [
+                'akun_id.required' => 'ID akun tidak boleh kosong',
+            ]
+        ];
+        $validator = Validator::make($request->all(), $validatedData[0], $validatedData[1]);
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => false,
+                'message' => $validator->errors()->first()
+            ], 401);
+        }
         date_default_timezone_set('Asia/Jakarta');
-        Akun::find($id)->update([
-            'tanggal_sinkron' => date('Y-m-d H:i:s')
+        $lastSinkron = date('Y-m-d H:i:s');
+        Akun::find($request->akun_id)->update([
+            'tanggal_sinkron' => $lastSinkron
         ]);
         return response()->json([
             'status' => true,
-            'message' => 'Tanggal sinkron telah diperbarui'
+            'message' => 'Tanggal sinkron telah diperbarui',
+            'tanggal_sinkron' => $lastSinkron
         ], 201);
     }
 }
