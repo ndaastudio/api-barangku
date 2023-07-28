@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Models\Akun;
 use App\Models\Jasa;
 use App\Models\Barang;
 use App\Models\GambarJasa;
@@ -49,6 +50,7 @@ class SinkronController extends Controller
     {
         $validatedData = [
             [
+                'id_barang' => 'required',
                 'akun_id' => 'required',
                 'nama_barang' => 'required',
                 'kategori' => 'required',
@@ -62,6 +64,7 @@ class SinkronController extends Controller
                 'progress' => 'required',
             ],
             [
+                'id_barang.required' => 'ID barang tidak boleh kosong',
                 'akun_id.required' => 'ID akun tidak boleh kosong',
                 'nama_barang.required' => 'Nama barang tidak boleh kosong',
                 'kategori.required' => 'Kategori tidak boleh kosong',
@@ -139,6 +142,7 @@ class SinkronController extends Controller
     {
         $validatedData = [
             [
+                'id_jasa' => 'required',
                 'akun_id' => 'required',
                 'nama_jasa' => 'required',
                 'kategori' => 'required',
@@ -150,6 +154,7 @@ class SinkronController extends Controller
                 'progress' => 'required',
             ],
             [
+                'id_jasa.required' => 'ID jasa tidak boleh kosong',
                 'akun_id.required' => 'ID akun tidak boleh kosong',
                 'nama_jasa.required' => 'Nama jasa tidak boleh kosong',
                 'kategori.required' => 'Kategori tidak boleh kosong',
@@ -209,6 +214,18 @@ class SinkronController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Data di server sudah sinkron dengan data di aplikasi'
+        ], 201);
+    }
+
+    public function upDatetimeSinkron(string $id)
+    {
+        date_default_timezone_set('Asia/Jakarta');
+        Akun::find($id)->update([
+            'tanggal_sinkron' => date('Y-m-d H:i:s')
+        ]);
+        return response()->json([
+            'status' => true,
+            'message' => 'Tanggal sinkron telah diperbarui'
         ], 201);
     }
 }

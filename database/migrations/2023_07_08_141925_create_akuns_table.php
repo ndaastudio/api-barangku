@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('status_akun')->default(0)->comment('0 (belum aktivasi), 1 (sudah aktivasi), 2 (nonaktif)');
             $table->dateTime('limit_akun')->nullable();
             $table->string('kode_lupa_password', 6)->unique()->nullable();
+            $table->dateTime('tanggal_sinkron')->nullable();
             $table->timestamps();
         });
     }
