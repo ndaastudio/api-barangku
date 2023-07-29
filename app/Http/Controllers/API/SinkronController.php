@@ -19,12 +19,6 @@ class SinkronController extends Controller
         $jasa = Jasa::where('akun_id', $id)->get();
         $gambarBarang = GambarBarang::where('akun_id', $id)->get();
         $gambarJasa = GambarJasa::where('akun_id', $id)->get();
-        if ($barang->isEmpty() && $jasa->isEmpty()) {
-            return response()->json([
-                'status' => false,
-                'message' => 'Data Anda tidak tersedia di server. Silahkan upload data Anda',
-            ], 404);
-        }
         return response()->json([
             'status' => true,
             'message' => 'Data di aplikasi sudah sinkron dengan data di server',
