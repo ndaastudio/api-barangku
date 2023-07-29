@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('gambar_jasa', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_gambar_jasa');
             $table->foreignIdFor(Akun::class);
             $table->foreignIdFor(Jasa::class);
             $table->string('gambar');

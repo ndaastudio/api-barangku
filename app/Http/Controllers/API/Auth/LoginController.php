@@ -24,12 +24,14 @@ class LoginController extends Controller
             [
                 'nomor_telepon' => 'required',
                 'password' => 'required|min:8|max:16',
+                'device_login' => 'required',
             ],
             [
                 'nomor_telepon.required' => 'Nomor telepon tidak boleh kosong',
                 'password.required' => 'Password tidak boleh kosong',
                 'password.min' => 'Password minimal 8 karakter',
                 'password.max' => 'Password maksimal 16 karakter',
+                'device_login.required' => 'Device login tidak boleh kosong',
             ]
         ];
         $validator = Validator::make($request->all(), $validatedData[0], $validatedData[1]);
@@ -60,6 +62,9 @@ class LoginController extends Controller
             ], 401);
         }
         $token = $isValidAkun->first()->createToken('auth_token')->plainTextToken;
+        $isValidAkun->first()->update([
+            'device_login' => $request->device_login,
+        ]);
         return response()->json([
             'status' => true,
             'message' => 'Berhasil login akun',

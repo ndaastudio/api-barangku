@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('jumlah_barang');
             $table->string('letak_barang');
             $table->string('keterangan');
-            $table->dateTime('jadwal_rencana');
-            $table->dateTime('jadwal_notifikasi');
+            $table->string('jadwal_rencana');
+            $table->string('jadwal_notifikasi');
             $table->integer('progress')->default(0);
             $table->timestamps();
         });

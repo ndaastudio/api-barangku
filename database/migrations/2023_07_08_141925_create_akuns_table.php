@@ -23,6 +23,7 @@ return new class extends Migration
             $table->dateTime('limit_akun')->nullable();
             $table->string('kode_lupa_password', 6)->unique()->nullable();
             $table->dateTime('tanggal_sinkron')->nullable();
+            $table->string('device_login')->nullable();
             $table->timestamps();
         });
     }

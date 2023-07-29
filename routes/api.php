@@ -25,13 +25,13 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [LoginController::class, 'logoutAkun']);
     Route::post('/ganti-pw', [LoginController::class, 'directGantiPw']);
     Route::get('/download-data/{id}', [SinkronController::class, 'downloadData']);
-    Route::delete('/barang/hapus/{id}', [SinkronController::class, 'deleteAllBarang']);
+    Route::delete('/barang/hapus/{id_user}/{id_barang}', [SinkronController::class, 'deleteBarangById']);
     Route::post('/barang/upload', [SinkronController::class, 'upDataBarang']);
-    Route::delete('/gambar-barang/hapus/{id}', [SinkronController::class, 'deleteAllGambarBarang']);
+    Route::delete('/gambar-barang/hapus/{id_user}/{id_gambar_barang}', [SinkronController::class, 'deleteGambarBarangById']);
     Route::post('/gambar-barang/upload', [SinkronController::class, 'upDataGambarBarang']);
-    Route::delete('/jasa/hapus/{id}', [SinkronController::class, 'deleteAllJasa']);
+    Route::delete('/jasa/hapus/{id_user}/{id_jasa}', [SinkronController::class, 'deleteJasaById']);
     Route::post('/jasa/upload', [SinkronController::class, 'upDataJasa']);
-    Route::delete('/gambar-jasa/hapus/{id}', [SinkronController::class, 'deleteAllGambarJasa']);
+    Route::delete('/gambar-jasa/hapus/{id_user}/{id_gambar_jasa}', [SinkronController::class, 'deleteGambarJasaById']);
     Route::post('/gambar-jasa/upload', [SinkronController::class, 'upDataGambarJasa']);
     Route::post('/akun/sinkron', [SinkronController::class, 'upDatetimeSinkron']);
 });

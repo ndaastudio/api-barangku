@@ -31,9 +31,9 @@ class SinkronController extends Controller
         ], 201);
     }
 
-    public function deleteAllBarang(string $id)
+    public function deleteBarangById(string $id_user, string $id_barang)
     {
-        Barang::where('akun_id', $id)->delete();
+        Barang::where('akun_id', $id_user)->where('id_barang', $id_barang)->delete();
         return response()->json([
             'status' => true,
             'message' => 'Data di server sudah dihapus',
@@ -86,9 +86,9 @@ class SinkronController extends Controller
         ], 201);
     }
 
-    public function deleteAllGambarBarang(string $id)
+    public function deleteGambarBarangById(string $id_user, string $id_gambar_barang)
     {
-        GambarBarang::where('akun_id', $id)->delete();
+        GambarBarang::where('akun_id', $id_user)->where('id_gambar_barang', $id_gambar_barang)->delete();
         return response()->json([
             'status' => true,
             'message' => 'Data di server sudah dihapus',
@@ -123,9 +123,9 @@ class SinkronController extends Controller
         ], 201);
     }
 
-    public function deleteAllJasa(string $id)
+    public function deleteJasaById(string $id_user, string $id_jasa)
     {
-        Jasa::where('akun_id', $id)->delete();
+        Jasa::where('akun_id', $id_user)->where('id_jasa', $id_jasa)->delete();
         return response()->json([
             'status' => true,
             'message' => 'Data di server sudah dihapus',
@@ -174,9 +174,9 @@ class SinkronController extends Controller
         ], 201);
     }
 
-    public function deleteAllGambarJasa(string $id)
+    public function deleteGambarJasaById(string $id_user, string $id_gambar_jasa)
     {
-        GambarJasa::where('akun_id', $id)->delete();
+        GambarJasa::where('akun_id', $id_user)->where('id_gambar_jasa', $id_gambar_jasa)->delete();
         return response()->json([
             'status' => true,
             'message' => 'Data di server sudah dihapus',
