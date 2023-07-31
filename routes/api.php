@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\API\UpdateController;
 use App\Http\Controllers\API\SinkronController;
 use App\Http\Controllers\API\Auth\MailController;
 use App\Http\Controllers\API\Auth\LoginController;
@@ -41,3 +42,4 @@ Route::post('/register', [RegisterController::class, 'registerAkun']);
 Route::post('/login', [LoginController::class, 'loginAkun']);
 Route::post('/lupa-password', [MailController::class, 'sendKodeLupaPw']);
 Route::post('/verif-lupa-pw', [MailController::class, 'verifKodeLupaPw']);
+Route::get('/cek-update-app', [UpdateController::class, 'getLatestVersion']);
