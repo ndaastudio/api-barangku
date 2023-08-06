@@ -55,6 +55,7 @@ class SinkronController extends Controller
                 'keterangan' => 'required',
                 'jadwal_rencana' => 'required',
                 'jadwal_notifikasi' => 'required',
+                'reminder' => 'required',
                 'progress' => 'required',
             ],
             [
@@ -69,6 +70,7 @@ class SinkronController extends Controller
                 'keterangan.required' => 'Keterangan tidak boleh kosong',
                 'jadwal_rencana.required' => 'Jadwal rencana tidak boleh kosong',
                 'jadwal_notifikasi.required' => 'Jadwal notifikasi tidak boleh kosong',
+                'reminder.required' => 'Reminder tidak boleh kosong',
                 'progress.required' => 'Progress tidak boleh kosong',
             ]
         ];
@@ -145,6 +147,7 @@ class SinkronController extends Controller
                 'keterangan' => 'required',
                 'jadwal_rencana' => 'required',
                 'jadwal_notifikasi' => 'required',
+                'reminder' => 'required',
                 'progress' => 'required',
             ],
             [
@@ -157,6 +160,7 @@ class SinkronController extends Controller
                 'keterangan.required' => 'Keterangan tidak boleh kosong',
                 'jadwal_rencana.required' => 'Jadwal rencana tidak boleh kosong',
                 'jadwal_notifikasi.required' => 'Jadwal notifikasi tidak boleh kosong',
+                'reminder.required' => 'Reminder tidak boleh kosong',
                 'progress.required' => 'Progress tidak boleh kosong',
             ]
         ];

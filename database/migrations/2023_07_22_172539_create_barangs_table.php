@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(Akun::class);
             $table->string('nama_barang');
             $table->string('kategori');
+            $table->string('kategori_lainnya')->nullable();
             $table->string('status');
             $table->string('extend_status');
             $table->string('jumlah_barang');
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->string('keterangan');
             $table->string('jadwal_rencana');
             $table->string('jadwal_notifikasi');
+            $table->string('reminder');
             $table->integer('progress')->default(0);
             $table->timestamps();
         });

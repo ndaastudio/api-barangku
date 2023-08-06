@@ -18,11 +18,13 @@ return new class extends Migration
             $table->foreignIdFor(Akun::class);
             $table->string('nama_jasa');
             $table->string('kategori');
+            $table->string('kategori_lainnya')->nullable();
             $table->string('jumlah_jasa');
             $table->string('letak_jasa');
             $table->string('keterangan');
             $table->string('jadwal_rencana');
             $table->string('jadwal_notifikasi');
+            $table->string('reminder');
             $table->integer('progress')->default(0);
             $table->timestamps();
         });
