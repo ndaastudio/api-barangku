@@ -30,10 +30,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/barang/upload', [SinkronController::class, 'upDataBarang']);
     Route::delete('/gambar-barang/hapus/{id_user}/{id_gambar_barang}', [SinkronController::class, 'deleteGambarBarangById']);
     Route::post('/gambar-barang/upload', [SinkronController::class, 'upDataGambarBarang']);
-    Route::delete('/jasa/hapus/{id_user}/{id_jasa}', [SinkronController::class, 'deleteJasaById']);
-    Route::post('/jasa/upload', [SinkronController::class, 'upDataJasa']);
-    Route::delete('/gambar-jasa/hapus/{id_user}/{id_gambar_jasa}', [SinkronController::class, 'deleteGambarJasaById']);
-    Route::post('/gambar-jasa/upload', [SinkronController::class, 'upDataGambarJasa']);
     Route::post('/akun/sinkron', [SinkronController::class, 'upDatetimeSinkron']);
 });
 
