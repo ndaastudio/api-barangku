@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::delete('/gambar-barang/hapus/{id_user}/{id_gambar_barang}', [SinkronController::class, 'deleteGambarBarangById']);
     Route::post('/gambar-barang/upload', [SinkronController::class, 'upDataGambarBarang']);
     Route::post('/akun/sinkron', [SinkronController::class, 'upDatetimeSinkron']);
+    Route::delete('/akun/data/{id}', [SinkronController::class, 'deleteAllData']);
 });
 
 Route::get('/kode-daftar/{kode_daftar}', [RegisterController::class, 'getAkunByKodeDaftar']);
