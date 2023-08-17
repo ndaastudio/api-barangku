@@ -54,6 +54,19 @@ class LoginController extends Controller
                 'message' => 'Akun belum diaktivasi',
             ], 401);
         }
+        $currentDate = date('Y-m-d H:i:s');
+        $expiredDate = date('Y-m-d H:i:s', strtotime($isValidAkun->first()->limit_akun));
+        if ($currentDate > $expiredDate && $isValidAkun->first()->status_akun == 1) {
+            $isValidAkun->first()->update([
+                'status_akun' => 2,
+            ]);
+        }
+        if ($isValidAkun->first()->status_akun == 2) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Akun telah expired, silahkan hubungi admin',
+            ], 401);
+        }
         $password = Crypt::decryptString($isValidAkun->first()->password);
         if ($request->password !== $password) {
             return response()->json([
