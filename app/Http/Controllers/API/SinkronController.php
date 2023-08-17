@@ -6,6 +6,7 @@ use App\Models\Akun;
 use App\Models\Barang;
 use App\Models\GambarBarang;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 
@@ -146,5 +147,25 @@ class SinkronController extends Controller
             'message' => 'Tanggal sinkron telah diperbarui',
             'tanggal_sinkron' => $lastSinkron
         ], 201);
+    }
+
+    public function deleteAllData(string $id)
+    {
+        try {
+            DB::beginTransaction();
+            Barang::where('akun_id', $id)->delete();
+            GambarBarang::where('akun_id', $id)->delete();
+            DB::commit();
+            return response()->json([
+                'status' => true,
+                'message' => 'Data di server telah dihapus',
+            ], 201);
+        } catch (\Throwable $th) {
+            DB::rollback();
+            return response()->json([
+                'status' => false,
+                'message' => 'Data di server gagal dihapus ' . $th->getMessage(),
+            ], 401);
+        }
     }
 }
