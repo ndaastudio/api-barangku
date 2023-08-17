@@ -25,6 +25,12 @@ class RegisterController extends Controller
                 'message' => 'Kode daftar sudah digunakan, silahkan login',
             ], 401);
         }
+        if ($isValidKodeDaftar->first()->status_akun == 2) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Kode daftar expired, silahkan hubungi admin',
+            ], 401);
+        }
         return response()->json([
             'status' => true,
             'message' => 'Berhasil validasi kode daftar',
