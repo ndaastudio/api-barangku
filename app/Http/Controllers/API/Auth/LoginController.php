@@ -54,6 +54,7 @@ class LoginController extends Controller
                 'message' => 'Akun belum diaktivasi',
             ], 401);
         }
+        date_default_timezone_set('Asia/Jakarta');
         $currentDate = date('Y-m-d H:i:s');
         $expiredDate = date('Y-m-d H:i:s', strtotime($isValidAkun->first()->limit_akun));
         if ($currentDate > $expiredDate && $isValidAkun->first()->status_akun == 1) {
@@ -149,5 +150,22 @@ class LoginController extends Controller
             'message' => 'Password telah diubah',
             'data' => $isValidAkun->first(),
         ], 200);
+    }
+
+    public function checkExpiredAkun(string $id)
+    {
+        $isValidAkun = Akun::where('id', $id);
+        date_default_timezone_set('Asia/Jakarta');
+        $currentDate = date('Y-m-d H:i:s');
+        $expiredDate = date('Y-m-d H:i:s', strtotime($isValidAkun->first()->limit_akun));
+        if ($currentDate > $expiredDate) {
+            $isValidAkun->first()->update([
+                'status_akun' => 2,
+            ]);
+        }
+        return response()->json([
+            'status' => true,
+            'status_akun' => $isValidAkun->first()->status_akun,
+        ], 201);
     }
 }
