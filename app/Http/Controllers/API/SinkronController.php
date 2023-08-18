@@ -149,17 +149,23 @@ class SinkronController extends Controller
         ], 201);
     }
 
-    public function deleteAllData(string $id)
+    public function checkExpiredDataUpload(string $id)
     {
         try {
-            DB::beginTransaction();
-            Barang::where('akun_id', $id)->delete();
-            GambarBarang::where('akun_id', $id)->delete();
-            DB::commit();
-            return response()->json([
-                'status' => true,
-                'message' => 'Data di server telah dihapus',
-            ], 201);
+            $tanggalSinkron = Akun::find($id)->tanggal_sinkron;
+            date_default_timezone_set('Asia/Jakarta');
+            $currentDate = date('Y-m-d H:i:s');
+            $expiredDate = date('Y-m-d H:i:s', strtotime($tanggalSinkron . ' + 2 day'));
+            if ($currentDate > $expiredDate) {
+                DB::beginTransaction();
+                Barang::where('akun_id', $id)->delete();
+                GambarBarang::where('akun_id', $id)->delete();
+                DB::commit();
+                return response()->json([
+                    'status' => true,
+                    'message' => 'Data di server telah dihapus',
+                ], 201);
+            }
         } catch (\Throwable $th) {
             DB::rollback();
             return response()->json([
