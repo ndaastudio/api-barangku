@@ -59,7 +59,7 @@
 									@if ($pembayaran->tanggal_transfer !== null && ($pembayaran->status === 0 || $pembayaran->status === 2))
 										<div class="col-auto mt-2 mb-2">
 											<a
-												href="https://api.whatsapp.com/send?phone={{ substr_replace('08123456789', '62', 0, 1) }}&text={{ urlencode("Assalamualaikum Warahmatullahi Wabarakatuh\n\nHalo admin, Saya sudah melakukan pembayaran. Mohon diterima pembayaran saya, berikut ini rincian pembayaran saya:\n\nJenis Paket:\n*{$jenisPaket}*\nKode Pembayaran:\n*{$kodePembayaran}*\nTotal Pembayaran:\n*Rp {$totalPembayaran}*\nNomor Rekening:\n*{$nomorRekening}*\nNama Pemilik Rekening:\n*{$namaRekening}*\nBank:\n*{$namaBank}*\n\nSekian konfirmasi dari saya, besar harapan untuk diterima pembayaran saya. Terima kasih.\n\nWassalamualaikum Warahmatullahi Wabarakatuh") }}"
+												href="https://api.whatsapp.com/send?phone={{ substr_replace('081367676651', '62', 0, 1) }}&text={{ urlencode("Assalamualaikum Warahmatullahi Wabarakatuh\n\nHalo admin, Saya sudah melakukan pembayaran. Mohon diterima pembayaran saya, berikut ini rincian pembayaran saya:\n\nJenis Paket:\n*{$jenisPaket}*\nKode Pembayaran:\n*{$kodePembayaran}*\nTotal Pembayaran:\n*Rp {$totalPembayaran}*\nNomor Rekening:\n*{$nomorRekening}*\nNama Pemilik Rekening:\n*{$namaRekening}*\nBank:\n*{$namaBank}*\n\nSekian konfirmasi dari saya, besar harapan untuk diterima pembayaran saya. Terima kasih.\n\nWassalamualaikum Warahmatullahi Wabarakatuh") }}"
 												target="_blank" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
 												data-bs-title="Laporkan Ke Admin" target="_blank"><i class="fa-solid fa-bullhorn"></i></a>
 										</div>
