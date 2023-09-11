@@ -82,8 +82,9 @@ class RegisterController extends Controller
             'nama' => $request->nama,
             'email' => $request->email,
             'password' => Crypt::encryptString($request->password, env('APP_KEY')),
+            'jenis_akun' => 1,
             'status_akun' => 1,
-            'limit_akun' => date('Y-m-d H:i:s', strtotime('+7 day')),
+            'limit_akun' => date('Y-m-d H:i:s', strtotime('+365 days')),
         ]);
         return response()->json([
             'status' => true,

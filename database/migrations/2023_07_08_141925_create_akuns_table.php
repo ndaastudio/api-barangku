@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Mitra;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('akun', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(Mitra::class)->nullable();
             $table->string('nama')->nullable();
             $table->string('email')->nullable()->unique();
             $table->string('nomor_telepon')->unique();
@@ -24,6 +26,7 @@ return new class extends Migration
             $table->string('kode_lupa_password', 6)->unique()->nullable();
             $table->dateTime('tanggal_sinkron')->nullable();
             $table->string('device_login')->nullable();
+            $table->integer('status_bayar')->default(0)->comment('0 (belum bayar), 1 (sudah bayar)');
             $table->timestamps();
         });
     }

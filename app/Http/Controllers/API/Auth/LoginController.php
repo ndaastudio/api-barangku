@@ -22,12 +22,14 @@ class LoginController extends Controller
     {
         $validatedData = [
             [
-                'nomor_telepon' => 'required',
+                'nomor_telepon' => 'required|numeric|digits_between:10,13',
                 'password' => 'required|min:8|max:16',
                 'device_login' => 'required',
             ],
             [
                 'nomor_telepon.required' => 'Nomor telepon tidak boleh kosong',
+                'nomor_telepon.numeric' => 'Nomor telepon harus berupa angka',
+                'nomor_telepon.digits_between' => 'Nomor telepon minimal 10 digit dan maksimal 13 digit',
                 'password.required' => 'Password tidak boleh kosong',
                 'password.min' => 'Password minimal 8 karakter',
                 'password.max' => 'Password maksimal 16 karakter',
@@ -100,7 +102,7 @@ class LoginController extends Controller
     {
         $validatedData = [
             [
-                'nomor_telepon' => 'required|numeric',
+                'nomor_telepon' => 'required|numeric|digits_between:10,13',
                 'password_lama' => 'required',
                 'password_baru' => 'required|min:8|max:16',
                 'konfirmasi_password_baru' => 'required|same:password_baru',
@@ -108,6 +110,7 @@ class LoginController extends Controller
             [
                 'nomor_telepon.required' => 'Nomor telepon tidak boleh kosong',
                 'nomor_telepon.numeric' => 'Nomor telepon harus berupa angka',
+                'nomor_telepon.digits_between' => 'Nomor telepon minimal 10 digit dan maksimal 13 digit',
                 'password_lama.required' => 'Password lama tidak boleh kosong',
                 'password_baru.required' => 'Password baru tidak boleh kosong',
                 'password_baru.min' => 'Password baru minimal 8 karakter',
