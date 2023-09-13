@@ -17,18 +17,18 @@
 	</a>
 	<ul class="menu-sub">
 		<li class="menu-item">
-			<a href="{{ route('kuota-marketing.tambah') }}" class="menu-link">
-				Tambah Kuota
+			<a href="{{ route('kuota-marketing.beli') }}" class="menu-link">
+				Pembelian
 			</a>
 		</li>
 		<li class="menu-item">
-			<a href="{{ route('kuota-marketing.konfirmasi') }}" class="menu-link">
-				Konfirmasi Pembayaran
+			<a href="{{ route('kuota-marketing.bayar') }}" class="menu-link">
+				Pembayaran
 			</a>
 		</li>
 		<li class="menu-item">
 			<a href="{{ route('kuota-marketing.harga') }}" class="menu-link">
-				Harga Marketing
+				Atur Harga
 			</a>
 		</li>
 	</ul>
