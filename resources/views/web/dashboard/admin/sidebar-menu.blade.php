@@ -1,3 +1,8 @@
+<li class="menu-item {{ $isActive === 'member.request.nonaktifkan' ? 'active' : '' }}">
+	<a href="{{ route('member.request.nonaktifkan') }}" class="menu-link">
+		<i class="menu-icon tf-icons ti ti-user-question"></i>Request Nonaktif Akun
+	</a>
+</li>
 <li class="menu-header small text-uppercase">
 	<span class="menu-header-text">Seleksi Mitra</span>
 </li>
