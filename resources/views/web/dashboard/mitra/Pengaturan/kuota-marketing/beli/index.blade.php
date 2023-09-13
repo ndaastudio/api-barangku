@@ -3,7 +3,7 @@
 @section('content')
 	<div class="card">
 		<h5 class="card-header">Silahkan pilih paket marketing Anda</h5>
-		<form action="{{ route('kuota-marketing.tambah') }}" method="POST" id="formBeli">
+		<form action="{{ route('kuota-marketing.beli') }}" method="POST" id="formBeli">
 			@csrf
 			<div class="card-body">
 				<div class="row">

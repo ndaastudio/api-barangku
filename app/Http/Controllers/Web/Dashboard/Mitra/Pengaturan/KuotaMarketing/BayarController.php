@@ -8,32 +8,32 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\FormBayarSekarang;
 use Illuminate\Support\Facades\Auth;
 
-class KonfirmasiController extends Controller
+class BayarController extends Controller
 {
     public function index()
     {
         $idMitra = Mitra::where('user_id', Auth::user()->id)->value('id');
         $data = [
             'breadcrumbs' => [
-                ['name' => 'Konfirmasi Pembayaran', 'url' => '/kuota-marketing/konfirmasi'],
+                ['name' => 'Pembayaran', 'url' => '/kuota-marketing/bayar'],
             ],
-            'isActive' => 'kuota-marketing.konfirmasi',
+            'isActive' => 'kuota-marketing.bayar',
             'pembayarans' => Pembayaran::where('mitra_id', $idMitra)->latest()->get(),
         ];
-        return view('web/dashboard/mitra/Pengaturan/kuota-marketing/konfirmasi/index', $data);
+        return view('web/dashboard/mitra/Pengaturan/kuota-marketing/bayar/index', $data);
     }
 
     public function edit(string $id)
     {
         $data = [
             'breadcrumbs' => [
-                ['name' => 'Konfirmasi Pembayaran', 'url' => '/kuota-marketing/konfirmasi'],
+                ['name' => 'Pembayaran', 'url' => '/kuota-marketing/bayar'],
                 ['name' => 'Bayar Sekarang', 'url' => null],
             ],
-            'isActive' => 'kuota-marketing.konfirmasi',
+            'isActive' => 'kuota-marketing.bayar',
             'pembayaran' => Pembayaran::find($id),
         ];
-        return view('web/dashboard/mitra/Pengaturan/kuota-marketing/konfirmasi/edit', $data);
+        return view('web/dashboard/mitra/Pengaturan/kuota-marketing/bayar/edit', $data);
     }
 
     public function update(FormBayarSekarang $request, string $id)
@@ -41,7 +41,7 @@ class KonfirmasiController extends Controller
         $validatedData = $request->validate();
         $isUpdated = Pembayaran::find($id)->update($validatedData);
         if ($isUpdated) {
-            return redirect()->route('kuota-marketing.konfirmasi')->with('success', 'Data pembayaran telah dikirim dan menunggu konfirmasi dari admin');
+            return redirect()->route('kuota-marketing.bayar')->with('success', 'Data pembayaran telah dikirim dan menunggu konfirmasi dari admin');
         }
         return redirect()->back()->withErrors($validatedData);
     }

@@ -66,7 +66,7 @@
 									@endif
 									@if ($pembayaran->tanggal_transfer === null)
 										<div class="col-auto mt-2 mb-2">
-											<a href="{{ route('kuota-marketing.konfirmasi.id', ['id' => $pembayaran->id]) }}" class="btn btn-success"
+											<a href="{{ route('kuota-marketing.bayar.id', ['id' => $pembayaran->id]) }}" class="btn btn-success"
 												data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Bayar Sekarang"><i
 													class="fa-solid fa-sack-dollar"></i>
 											</a>
@@ -74,7 +74,7 @@
 									@endif
 									@if ($pembayaran->status === 0 || $pembayaran->status === 2)
 										<div class="col-auto mt-2 mb-2">
-											<form action="{{ route('kuota-marketing.konfirmasi.id', ['id' => $pembayaran->id]) }}" method="POST"
+											<form action="{{ route('kuota-marketing.bayar.id', ['id' => $pembayaran->id]) }}" method="POST"
 												id="formDelete{{ $pembayaran->id }}">
 												@csrf
 												@method('DELETE')

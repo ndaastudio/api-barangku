@@ -8,17 +8,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class TambahController extends Controller
+class BeliController extends Controller
 {
     public function index()
     {
         $data = [
             'breadcrumbs' => [
-                ['name' => 'Tambah Kuota', 'url' => '/kuota-marketing/tambah'],
+                ['name' => 'Pembelian', 'url' => '/kuota-marketing/beli'],
             ],
-            'isActive' => 'kuota-marketing.tambah',
+            'isActive' => 'kuota-marketing.beli',
         ];
-        return view('web/dashboard/mitra/Pengaturan/kuota-marketing/tambah/index', $data);
+        return view('web/dashboard/mitra/Pengaturan/kuota-marketing/beli/index', $data);
     }
 
     public function store(Request $request)
@@ -43,7 +43,7 @@ class TambahController extends Controller
             'nominal' => $hargaPaket[$request->jenis_paket] + $kodePembayaran,
         ]);
         if ($isCreated) {
-            return redirect()->back()->with('success', 'Silahkan lengkapi data dan lakukan pembayaran di menu Konfirmasi Pembayaran');
+            return redirect()->back()->with('success', 'Silahkan lengkapi data dan lakukan pembayaran di menu Pembayaran');
         }
         return redirect()->back()->with('error', 'Terjadi kesalahan pada database atau server');
     }

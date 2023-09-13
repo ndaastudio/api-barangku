@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="card">
-		<form action="{{ route('kuota-marketing.konfirmasi.id', ['id' => $pembayaran->id]) }}" method="POST">
+		<form action="{{ route('kuota-marketing.bayar.id', ['id' => $pembayaran->id]) }}" method="POST">
 			@csrf
 			@method('PUT')
 			<div class="card-body">
