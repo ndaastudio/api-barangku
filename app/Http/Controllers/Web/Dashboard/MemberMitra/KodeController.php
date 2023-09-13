@@ -35,7 +35,7 @@ class KodeController extends Controller
             if (!$mitra->harga_kode) {
                 return redirect()->back()->with('error', 'Atur harga Kode Daftar terlebih dahulu');
             }
-            if ($mitra->kuota_kode === 0) {
+            if ($mitra->kuota_kode <= 0) {
                 return redirect()->back()->with('error', 'Kuota Kode Daftar telah habis');
             }
             $generatedKodeDaftar = false;
