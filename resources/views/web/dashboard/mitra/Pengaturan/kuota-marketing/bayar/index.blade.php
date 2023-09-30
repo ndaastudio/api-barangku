@@ -17,11 +17,11 @@
 						<th scope="col">No.</th>
 						<th scope="col">Jenis Paket</th>
 						<th scope="col">Total Kuota</th>
+						<th scope="col">Kode Pembayaran</th>
+						<th scope="col">Total Pembayaran</th>
 						<th scope="col">Nama Rekening</th>
 						<th scope="col">Bank</th>
 						<th scope="col">Nomor Rekening</th>
-						<th scope="col">Kode Pembayaran</th>
-						<th scope="col">Total Pembayaran</th>
 						<th scope="col">Tanggal Transfer</th>
 						<th scope="col">Status</th>
 						<th scope="col">Action</th>
@@ -37,12 +37,14 @@
 							<th scope="row" class="text-center">{{ $no }}</th>
 							<td>{{ $pembayaran->jenis_paket }}</td>
 							<td>{{ $pembayaran->total_kuota }}</td>
+							<td>{{ $pembayaran->kode_pembayaran }}</td>
+							<td>Rp {{ number_format($pembayaran->nominal, 0, ',', '.') }}</td>
 							<td>{{ $pembayaran->nama_rekening }}</td>
 							<td>{{ $pembayaran->nama_bank }}</td>
 							<td>{{ $pembayaran->nomor_rekening }}</td>
-							<td>{{ $pembayaran->kode_pembayaran }}</td>
-							<td>Rp {{ number_format($pembayaran->nominal, 0, ',', '.') }}</td>
-							<td>{{ Carbon::parse($pembayaran->tanggal_transfer)->format('d-m-Y') }}</td>
+							<td>
+								{{ $pembayaran->tanggal_transfer !== null ? Carbon::parse($pembayaran->tanggal_transfer)->format('d-m-Y') : '' }}
+							</td>
 							<td>
 								{{ $pembayaran->status === 0 ? 'Pending' : ($pembayaran->status === 1 ? 'Diterima' : ($pembayaran->status === 2 ? 'Ditolak' : '')) }}
 							</td>
@@ -67,7 +69,7 @@
 									@if ($pembayaran->tanggal_transfer === null)
 										<div class="col-auto mt-2 mb-2">
 											<a href="{{ route('kuota-marketing.bayar.id', ['id' => $pembayaran->id]) }}" class="btn btn-success"
-												data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Bayar Sekarang"><i
+												data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Konfirmasi Pembayaran"><i
 													class="fa-solid fa-sack-dollar"></i>
 											</a>
 										</div>
