@@ -226,6 +226,14 @@
 								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 							</div>
 						@endif
+						@if (Route::current()->getName() == 'member.kode')
+							@if ($errors->has('nomor_telepon'))
+								<div class="alert alert-danger alert-dismissible fade show" role="alert">
+									<strong>Gagal!</strong> {{ $errors->first('nomor_telepon') }}
+									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+								</div>
+							@endif
+						@endif
 						@yield('content')
 					</div>
 					<!-- / Content -->
