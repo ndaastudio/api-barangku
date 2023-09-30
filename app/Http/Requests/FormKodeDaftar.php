@@ -22,7 +22,7 @@ class FormKodeDaftar extends FormRequest
     public function rules(): array
     {
         return [
-            'nomor_telepon' => 'required|numeric|digits_between:10,13',
+            'nomor_telepon' => 'required|numeric|unique:akun,nomor_telepon|digits_between:10,13',
         ];
     }
 
@@ -31,6 +31,7 @@ class FormKodeDaftar extends FormRequest
         return [
             'nomor_telepon.required' => 'Nomor telepon tidak boleh kosong',
             'nomor_telepon.numeric' => 'Nomor telepon harus berupa angka',
+            'nomor_telepon.unique' => 'Nomor telepon sudah terdaftar',
             'nomor_telepon.digits_between' => 'Nomor telepon minimal 10 digit dan maksimal 13 digit',
         ];
     }
