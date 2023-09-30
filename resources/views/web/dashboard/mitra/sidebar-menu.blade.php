@@ -27,8 +27,8 @@
 			</a>
 		</li>
 		<li class="menu-item">
-			<a href="{{ route('kuota-marketing.harga') }}" class="menu-link">
-				Atur Harga
+			<a href="{{ route('kuota-marketing.atur-pembayaran') }}" class="menu-link">
+				Atur Pembayaran
 			</a>
 		</li>
 	</ul>
