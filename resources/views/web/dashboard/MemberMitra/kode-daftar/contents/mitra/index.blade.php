@@ -61,10 +61,13 @@
 									$hargaKode = number_format($member->mitra->harga_kode, 0, ',', '.');
 									$kodePembayaran = rand(100, 999);
 									$totalPembayaran = number_format($member->mitra->harga_kode + $kodePembayaran, 0, ',', '.');
+									$nomorRekening = $member->mitra->nomor_rekening;
+									$namaBank = $member->mitra->nama_bank;
+									$namaPemilikRekening = $member->mitra->nama_rekening;
 								@endphp
 								<div class="col-auto mt-2 mb-2">
 									<a
-										href="https://api.whatsapp.com/send?phone={{ substr_replace($member->nomor_telepon, '62', 0, 1) }}&text={{ urlencode("Assalamualaikum Warahmatullahi Wabarakatuh\n\nSebelum kami berikan Kode Daftar Anda, kami harap untuk melakukan pembayaran terlebih dahulu. Berikut ini rincian pembayaran Anda:\n\nHarga Kode Daftar:\n*Rp {$hargaKode}*\nKode Pembayaran:\n*{$kodePembayaran}*\nTotal Pembayaran:\n*Rp {$totalPembayaran}*\n\nSilahkan kirim bukti pembayaran kesini, kemudian akan kami bagikan Kode Daftar Anda untuk menggunakan aplikasi Barangku. Terima kasih.\n\nWassalamualaikum Warahmatullahi Wabarakatuh") }}"
+										href="https://api.whatsapp.com/send?phone={{ substr_replace($member->nomor_telepon, '62', 0, 1) }}&text={{ urlencode("Salam sehat. Sebelum diberikan Kode Daftar untuk aplikasi Barangku, diharapkan untuk melakukan pembayaran terlebih dahulu. Berikut ini rincian pembayaran Anda:\n\nHarga Kode Daftar: *Rp {$hargaKode}*\nKode Pembayaran: *{$kodePembayaran}*\nTotal Pembayaran: *Rp {$totalPembayaran}*\nNomor Rekening: *{$nomorRekening}*\nBank {$namaBank}\nA.N. *{$namaPemilikRekening}*\n\nSilahkan kirim bukti pembayaran ke WhatsApp ini, kemudian akan dibagikan Kode Daftar Anda untuk menggunakan aplikasi Barangku. Terima kasih.") }}"
 										target="_blank" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="bottom"
 										data-bs-title="Informasikan Pembayaran" target="_blank"><i class="fa-solid fa-bullhorn"></i></a>
 								</div>
@@ -75,6 +78,40 @@
 										<button type="submit" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom"
 											data-bs-title="Telah Bayar"><i class="fa-solid fa-sack-dollar"></i></button>
 									</form>
+								</div>
+								<div class="col-auto mt-2 mb-2">
+									<div class="modal fade" id="modal-edit{{ $member->id }}" tabindex="-1" aria-labelledby="edit"
+										aria-hidden="true">
+										<div class="modal-dialog">
+											<div class="modal-content">
+												<form class="mb-3" action="{{ route('member.update.nomor.id', ['id' => $member->id]) }}" method="POST">
+													@csrf
+													@method('PUT')
+													<div class="modal-header">
+														<h1 class="modal-title fs-5" id="edit">Edit Nomor Telepon</h1>
+														<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+													</div>
+													<div class="modal-body">
+														<div class="mb-3">
+															<label for="nomor_telepon" class="form-label">Nomor Telepon</label>
+															<input type="number" class="form-control {{ $errors->has('nomor_telepon') ? 'is-invalid' : '' }}"
+																id="nomor_telepon" name="nomor_telepon" value="{{ old('nomor_telepon', $member->nomor_telepon) }}"
+																autofocus required />
+															@if ($errors->has('nomor_telepon'))
+																<div class="invalid-feedback">{{ $errors->first('nomor_telepon') }}</div>
+															@endif
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+														<button type="submit" class="btn btn-primary">Simpan</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+									<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+										data-bs-target="#modal-edit{{ $member->id }}"><i class="fa-solid fa-edit"></i></button>
 								</div>
 								<div class="col-auto mt-2 mb-2">
 									<form action="{{ route('member.kode.id', ['id' => $member->id]) }}" method="POST"
