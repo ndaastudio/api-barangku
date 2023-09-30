@@ -46,7 +46,7 @@
 								{{ $pembayaran->tanggal_transfer !== null ? Carbon::parse($pembayaran->tanggal_transfer)->format('d-m-Y') : '' }}
 							</td>
 							<td>
-								{{ $pembayaran->status === 0 ? 'Pending' : ($pembayaran->status === 1 ? 'Diterima' : ($pembayaran->status === 2 ? 'Ditolak' : '')) }}
+								{{ $pembayaran->status == 0 ? 'Pending' : ($pembayaran->status == 1 ? 'Diterima' : ($pembayaran->status == 2 ? 'Ditolak' : '')) }}
 							</td>
 							<td>
 								<div class="row">
