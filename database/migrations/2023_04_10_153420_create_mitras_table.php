@@ -30,6 +30,9 @@ return new class extends Migration
             $table->integer('status_tahap');
             $table->integer('harga_kode')->nullable();
             $table->integer('kuota_kode')->default(1);
+            $table->string('nomor_rekening')->nullable();
+            $table->string('nama_bank')->nullable();
+            $table->string('nama_rekening')->nullable();
             $table->timestamps();
         });
     }
