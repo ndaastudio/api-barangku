@@ -28,7 +28,12 @@ class DiterimaController extends Controller
             $pembayaran = Pembayaran::find($id);
             $mitra = Mitra::where('id', $pembayaran->mitra_id);
             $pembayaran->update(['status' => 0]);
-            $mitra->update(['kuota_kode' => $mitra->first()->kuota_kode - $pembayaran->total_kuota]);
+            $diffKuota = $mitra->first()->kuota_kode - $pembayaran->total_kuota;
+            if ($diffKuota < 0) {
+                $mitra->update(['kuota_kode' => 0]);
+            } else {
+                $mitra->update(['kuota_kode' => $diffKuota]);
+            }
             DB::commit();
             return redirect()->back()->with('success', 'Pembayaran dibatalkan dari status diterima');
         } catch (\Exception $e) {
