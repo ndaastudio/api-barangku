@@ -32,8 +32,8 @@ class KodeController extends Controller
         try {
             DB::beginTransaction();
             $mitra = Mitra::where('user_id', Auth::user()->id)->first();
-            if (!$mitra->harga_kode) {
-                return redirect()->back()->with('error', 'Atur harga Kode Daftar terlebih dahulu');
+            if ($mitra->nama_rekening == null || $mitra->nama_bank == null || $mitra->nomor_rekening == null || $mitra->harga_kode == null) {
+                return redirect()->back()->with('error', 'Silahkan atur pembayaran Anda terlebih dahulu');
             }
             if ($mitra->kuota_kode <= 0) {
                 return redirect()->back()->with('error', 'Kuota Kode Daftar telah habis');
@@ -74,9 +74,26 @@ class KodeController extends Controller
 
     public function destroy(string $id)
     {
-        $isDeleted = Akun::find($id)->delete();
-        if ($isDeleted) {
+        try {
+            DB::beginTransaction();
+            $mitra = Mitra::where('user_id', Auth::user()->id)->first();
+            $mitra->update([
+                'kuota_kode' => $mitra->kuota_kode + 1,
+            ]);
+            Akun::find($id)->delete();
+            DB::commit();
             return redirect()->back()->with('success', 'Kode daftar telah dihapus');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return redirect()->back()->with('error', 'Terjadi kesalahan pada database atau server: ' . $e->getMessage());
+        }
+    }
+
+    public function updateNomor(string $id, FormKodeDaftar $request)
+    {
+        $isUpdated = Akun::find($id)->update(['nomor_telepon' => $request->nomor_telepon]);
+        if ($isUpdated) {
+            return redirect()->back()->with('success', 'Nomor telepon telah diubah');
         }
         return redirect()->back()->with('error', 'Terjadi kesalahan pada database atau server');
     }
