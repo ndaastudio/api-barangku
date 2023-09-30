@@ -62,7 +62,7 @@
 										@endphp
 										<div class="col-auto mt-2 mb-2">
 											<a
-												href="https://api.whatsapp.com/send?phone={{ substr_replace($mitra->nomor_whatsapp, '62', 0, 1) }}&text={{ urlencode("Assalamualaikum Warahmatullahi Wabarakatuh.\n\nKepada Yth.\n{$mitra->nama}\nMitra Marketing Barangku\n\nBerikut ini akun mitra anda.\nNomor WhatsApp : {$mitra->user->nomor_whatsapp}\nPassword : {$pwDecode}\n\nHalaman login : https://barangku.web.id/dashboard/login\n\nSemoga kerja sama kita diberkahi dan diridhoi oleh Allah SWT.\n\nWassalamualaikum Warahmatullahi Wabarakatuh.\n\nSalam Hormat.\nBarangku\nwww.barangku.web.id") }}"
+												href="https://api.whatsapp.com/send?phone={{ substr_replace($mitra->nomor_whatsapp, '62', 0, 1) }}&text={{ urlencode("Salam sehat,\n\nKepada Yth. *{$mitra->nama}*\nMitra Marketing Barangku\n\nBerikut ini akun mitra Anda:\nNomor WhatsApp: {$mitra->user->nomor_whatsapp}\nPassword: {$pwDecode}\nHalaman Login: https://barangku.web.id/dashboard/login\n\nHormat kami,\nBarangku\nwww.barangku.web.id") }}"
 												class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Bagikan Akun"
 												target="__blank"><i class="fa-solid fa-share"></i></a>
 										</div>
