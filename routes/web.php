@@ -18,7 +18,7 @@ use App\Http\Controllers\Web\Dashboard\MemberMitra\KodeController as KodeDaftarC
 use App\Http\Controllers\Web\Dashboard\MemberMitra\MemberAktifController;
 use App\Http\Controllers\Web\Dashboard\MemberMitra\MemberNonaktifController;
 use App\Http\Controllers\Web\Dashboard\MemberMitra\TelahBayarController;
-use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\KuotaMarketing\HargaController as HargaMarketingController;
+use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\KuotaMarketing\AturPembayaranController;
 use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\KuotaMarketing\BayarController as PembayaranController;
 use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\KuotaMarketing\BeliController as BeliKuotaMarketingController;
 
@@ -78,6 +78,7 @@ Route::controller(KodeDaftarController::class)->group(function () {
     Route::middleware('isMitra')->group(function () {
         Route::post('/member/kode', 'store');
         Route::put('/member/kode/{id}', 'update')->name('member.kode.id');
+        Route::put('/member/nomor/{id}', 'updateNomor')->name('member.update.nomor.id');
         Route::delete('/member/kode/{id}', 'destroy');
     });
 });
@@ -87,15 +88,15 @@ Route::controller(TelahBayarController::class)->group(function () {
 });
 Route::controller(MemberAktifController::class)->group(function () {
     Route::get('/member/aktif', 'index')->name('member.aktif')->middleware('isAuth');
-    Route::middleware('isMitra')->group(function () {
+    Route::middleware('isAdmin')->group(function () {
         Route::put('/member/aktif/{id}', 'update')->name('member.aktif.id');
         Route::delete('/member/aktif/{id}', 'destroy');
-        Route::put('/member/aktif/perpanjang/{id}', 'perpanjangMasaAktif')->name('member.aktif.perpanjang.id');
     });
+    Route::put('/member/aktif/perpanjang/{id}', 'perpanjangMasaAktif')->name('member.aktif.perpanjang.id')->middleware('isMitra');
 });
 Route::controller(MemberNonaktifController::class)->group(function () {
     Route::get('/member/nonaktif', 'index')->name('member.nonaktif')->middleware('isAuth');
-    Route::middleware('isMitra')->group(function () {
+    Route::middleware('isAdmin')->group(function () {
         Route::put('/member/nonaktif/{id}', 'update')->name('member.nonaktif.id');
         Route::delete('/member/nonaktif/{id}', 'destroy');
     });
@@ -128,9 +129,9 @@ Route::middleware('isMitra')->group(function () {
         Route::get('/kuota-marketing/bayar/{id}', 'edit');
         Route::delete('/kuota-marketing/bayar/{id}', 'destroy');
     });
-    Route::controller(HargaMarketingController::class)->group(function () {
-        Route::get('/kuota-marketing/harga', 'index')->name('kuota-marketing.harga');
-        Route::put('/kuota-marketing/harga', 'update');
+    Route::controller(AturPembayaranController::class)->group(function () {
+        Route::get('/kuota-marketing/atur-pembayaran', 'index')->name('kuota-marketing.atur-pembayaran');
+        Route::put('/kuota-marketing/atur-pembayaran', 'update');
     });
 });
 
