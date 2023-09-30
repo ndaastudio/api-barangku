@@ -30,14 +30,6 @@
 						<td>
 							<div class="row">
 								<div class="col-auto mt-2 mb-2">
-									<form action="{{ route('member.aktif.id', ['id' => $member->id]) }}" method="POST">
-										@csrf
-										@method('PUT')
-										<button type="submit" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="bottom"
-											data-bs-title="Nonaktifkan Akun"><i class="fa-solid fa-power-off"></i></button>
-									</form>
-								</div>
-								<div class="col-auto mt-2 mb-2">
 									<form action="{{ route('member.aktif.perpanjang.id', ['id' => $member->id]) }}" method="POST"
 										id="formPerpanjangAkun{{ $member->id }}">
 										@csrf
@@ -45,16 +37,6 @@
 										<button type="button" onclick="confirmPerpanjang({{ $member->id }})" class="btn btn-success"
 											data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Perpanjang Masa Aktif"><i
 												class="fa-solid fa-circle-up"></i></button>
-									</form>
-								</div>
-								<div class="col-auto mt-2 mb-2">
-									<form action="{{ route('member.aktif.id', ['id' => $member->id]) }}" method="POST"
-										id="formDelete{{ $member->id }}">
-										@csrf
-										@method('DELETE')
-										<button type="button" onclick="confirmDelete({{ $member->id }})" class="btn btn-danger"
-											data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Hapus"><i
-												class="fa-solid fa-trash"></i></button>
 									</form>
 								</div>
 							</div>
