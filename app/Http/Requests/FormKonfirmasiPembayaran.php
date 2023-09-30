@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FormBayarSekarang extends FormRequest
+class FormKonfirmasiPembayaran extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,6 +25,7 @@ class FormBayarSekarang extends FormRequest
             'nama_rekening' => 'required|string|min:3|max:255',
             'nama_bank' => 'required|string|min:2|max:255',
             'nomor_rekening' => 'required|numeric',
+            'tanggal_transfer' => 'required|date',
         ];
     }
 
@@ -41,14 +42,8 @@ class FormBayarSekarang extends FormRequest
             'nama_bank.max' => 'Nama bank maksimal 255 karakter',
             'nomor_rekening.required' => 'Nomor rekening tidak boleh kosong',
             'nomor_rekening.numeric' => 'Nomor rekening harus berupa angka',
+            'tanggal_transfer.required' => 'Tanggal transfer tidak boleh kosong',
+            'tanggal_transfer.date' => 'Tanggal transfer harus berupa tanggal',
         ];
-    }
-
-    public function validate(): array
-    {
-        date_default_timezone_set('Asia/Jakarta');
-        $validated = parent::validated();
-        $validated['tanggal_transfer'] = date('Y-m-d H:i:s');
-        return $validated;
     }
 }
