@@ -3,11 +3,11 @@
 use App\Http\Controllers\Web\Dashboard\Admin\PembayaranMitra\DiterimaController;
 use App\Http\Controllers\Web\Dashboard\Admin\PembayaranMitra\DitolakController;
 use App\Http\Controllers\Web\Dashboard\Admin\PembayaranMitra\MenungguController;
-use App\Http\Controllers\Web\Dashboard\Admin\ReqNonaktifkanAkunController;
+use App\Http\Controllers\Web\Dashboard\Admin\ReqHapusAkunController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\Home\LandingController;
 use App\Http\Controllers\Web\Home\RekrutmenController;
-use App\Http\Controllers\Web\NonaktifkanAkunController;
+use App\Http\Controllers\Web\HapusAkunController;
 use App\Http\Controllers\Web\Home\SyaratDanKetentuanController;
 use App\Http\Controllers\Web\Dashboard\Admin\SeleksiMitra\CalonController as CalonMitraController;
 use App\Http\Controllers\Web\Dashboard\Admin\SeleksiMitra\TerpilihController as MitraTerpilihController;
@@ -40,8 +40,8 @@ Route::get('/syarat-dan-ketentuan', [SyaratDanKetentuanController::class, 'index
 Route::get('/rekrutmen', [RekrutmenController::class, 'index'])->name('rekrutmen');
 Route::post('/rekrutmen', [RekrutmenController::class, 'store']);
 
-Route::get('/nonaktifkan-akun', [NonaktifkanAkunController::class, 'index'])->name('nonaktifkan-akun');
-Route::post('/nonaktifkan-akun', [NonaktifkanAkunController::class, 'store']);
+Route::get('/hapus-akun', [HapusAkunController::class, 'index'])->name('hapus-akun');
+Route::post('/hapus-akun', [HapusAkunController::class, 'store']);
 
 Route::controller(DashboardLoginController::class)->group(function () {
     Route::get('/dashboard/login', 'index')->name('dashboard.login')->middleware('isLogin');
@@ -136,8 +136,8 @@ Route::middleware('isMitra')->group(function () {
 });
 
 Route::middleware('isAdmin')->group(function () {
-    Route::controller(ReqNonaktifkanAkunController::class)->group(function () {
-        Route::get('/request-nonaktif-akun', 'index')->name('member.request.nonaktifkan');
-        Route::put('/request-nonaktif-akun/{id}', 'update')->name('member.request.nonaktifkan.id');
+    Route::controller(ReqHapusAkunController::class)->group(function () {
+        Route::get('/request-hapus-akun', 'index')->name('member.request.hapus');
+        Route::delete('/request-hapus-akun/{id}', 'destroy')->name('member.request.hapus.id');
     });
 });

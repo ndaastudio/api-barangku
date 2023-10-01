@@ -38,12 +38,12 @@
 								@if ($member->akun->status_akun === 1)
 									<div class="row">
 										<div class="col-auto mt-2 mb-2">
-											<form action="{{ route('member.request.nonaktifkan.id', ['id' => $member->akun->id]) }}" method="POST"
-												id="formNonaktifAkun{{ $member->akun->id }}">
+											<form action="{{ route('member.request.hapus.id', ['id' => $member->akun->id]) }}" method="POST"
+												id="formHapusAkun{{ $member->akun->id }}">
 												@csrf
 												@method('PUT')
-												<button type="button" onclick="confirmNonaktifAkun({{ $member->akun->id }})" class="btn btn-danger"
-													data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Nonaktifkan Akun"><i
+												<button type="button" onclick="confirmHapusAkun({{ $member->akun->id }})" class="btn btn-danger"
+													data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Hapus Akun"><i
 														class="fa-solid fa-power-off"></i></button>
 											</form>
 										</div>

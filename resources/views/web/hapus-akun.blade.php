@@ -76,7 +76,7 @@
 								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 							</div>
 						@endif
-						<h4 class="mb-1 pt-2">Nonaktifkan Akun 📴</h4>
+						<h4 class="mb-1 pt-2">Hapus Akun 🚫</h4>
 						<p class="mb-4">Silahkan masukkan kredensial akun Anda untuk melanjutkan</p>
 						<form class="mb-3" action="{{ route('nonaktifkan-akun') }}" method="POST">
 							@csrf
@@ -96,7 +96,7 @@
 									<div class="invalid-feedback">{{ $errors->first('password') }}</div>
 								@endif
 							</div>
-							<button type="submit" class="btn btn-primary d-grid w-100">Nonaktifkan Akun</button>
+							<button type="submit" class="btn btn-primary d-grid w-100">Hapus Akun</button>
 						</form>
 					</div>
 				</div>

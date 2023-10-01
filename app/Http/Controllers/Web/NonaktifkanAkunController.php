@@ -3,23 +3,23 @@
 namespace App\Http\Controllers\Web;
 
 use App\Models\Akun;
-use App\Models\ReqNonaktifAkun;
+use App\Models\ReqHapusAkun;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Crypt;
-use App\Http\Requests\FormNonaktifkanAkun;
+use App\Http\Requests\FormHapusAkun;
 
-class NonaktifkanAkunController extends Controller
+class HapusAkunController extends Controller
 {
     public function index()
     {
         $data = [
-            'title' => 'Nonaktifkan Akun',
+            'title' => 'Hapus Akun',
         ];
-        return view('web.nonaktifkan-akun', $data);
+        return view('web.hapus-akun', $data);
     }
 
-    public function store(FormNonaktifkanAkun $request)
+    public function store(FormHapusAkun $request)
     {
         try {
             DB::beginTransaction();
@@ -35,9 +35,9 @@ class NonaktifkanAkunController extends Controller
                 if ($request->password !== $password) {
                     return redirect()->back()->with('error', 'Password salah');
                 }
-                ReqNonaktifAkun::create(['akun_id' => $akun->id]);
+                ReqHapusAkun::create(['akun_id' => $akun->id]);
                 DB::commit();
-                return redirect()->back()->with('success', 'Akun telah diajukan untuk dinonaktifkan. Mohon menunggu konfirmasi dari admin');
+                return redirect()->back()->with('success', 'Akun telah diajukan untuk dihapus. Mohon menunggu konfirmasi dari admin');
             }
             return redirect()->back()->with('error', 'Akun tidak terdaftar');
         } catch (\Throwable $th) {

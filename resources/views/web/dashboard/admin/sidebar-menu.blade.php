@@ -1,6 +1,6 @@
-<li class="menu-item {{ $isActive === 'member.request.nonaktifkan' ? 'active' : '' }}">
-	<a href="{{ route('member.request.nonaktifkan') }}" class="menu-link">
-		<i class="menu-icon tf-icons ti ti-user-question"></i>Request Nonaktif Akun
+<li class="menu-item {{ $isActive === 'member.request.hapus' ? 'active' : '' }}">
+	<a href="{{ route('member.request.hapus') }}" class="menu-link">
+		<i class="menu-icon tf-icons ti ti-user-question"></i>Request Hapus Akun
 	</a>
 </li>
 <li class="menu-header small text-uppercase">

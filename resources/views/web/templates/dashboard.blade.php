@@ -347,19 +347,19 @@
 			})
 		}
 
-		function confirmNonaktifAkun(id) {
+		function confirmHapusAkun(id) {
 			Swal.fire({
 				title: 'Apakah anda yakin?',
-				text: "Akun ini akan dinonaktifkan dan tidak dapat digunakan lagi",
+				text: "Akun ini akan dihapus dan tidak dapat digunakan lagi",
 				icon: 'warning',
 				showCancelButton: true,
 				confirmButtonColor: '#d33',
 				cancelButtonColor: '#3085d6',
-				confirmButtonText: 'Ya, nonaktifkan!',
+				confirmButtonText: 'Ya, hapus!',
 				cancelButtonText: 'Batal'
 			}).then((result) => {
 				if (result.isConfirmed) {
-					$('#formNonaktifAkun' + id).submit();
+					$('#formHapusAkun' + id).submit();
 				}
 			})
 		}

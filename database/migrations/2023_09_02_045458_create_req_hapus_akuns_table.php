@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('req_nonaktif_akun', function (Blueprint $table) {
+        Schema::create('req_hapus_akun', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Akun::class);
             $table->timestamps();
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('req_nonaktif_akun');
+        Schema::dropIfExists('req_hapus_akun');
     }
 };
