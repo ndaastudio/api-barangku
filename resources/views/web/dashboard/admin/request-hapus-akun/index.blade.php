@@ -32,10 +32,10 @@
 							<td>{{ $member->akun->paket == '0' ? 'Trial 7 Hari' : '1 Tahun (365 Hari)' }}</td>
 							<td>{{ Carbon::parse($member->akun->limit_akun)->diffForHumans(Carbon::now(), ['parts' => 3]) }}</td>
 							<td>
-								{{ $member->akun->status_akun === 0 ? 'Belum diaktivasi' : ($member->akun->status_akun === 1 ? 'Aktif' : ($member->akun->status_akun === 2 ? 'Nonaktif' : '')) }}
+								{{ $member->akun->status_akun == 0 ? 'Belum diaktivasi' : ($member->akun->status_akun == 1 ? 'Aktif' : ($member->akun->status_akun == 2 ? 'Nonaktif' : '')) }}
 							</td>
 							<td>
-								@if ($member->akun->status_akun === 1)
+								@if ($member->akun->status_akun == 1)
 									<div class="row">
 										<div class="col-auto mt-2 mb-2">
 											<form action="{{ route('member.request.hapus.id', ['id' => $member->akun->id]) }}" method="POST"
