@@ -78,7 +78,7 @@
 						@endif
 						<h4 class="mb-1 pt-2">Hapus Akun 🚫</h4>
 						<p class="mb-4">Silahkan masukkan kredensial akun Anda untuk melanjutkan</p>
-						<form class="mb-3" action="{{ route('nonaktifkan-akun') }}" method="POST">
+						<form class="mb-3" action="{{ route('hapus-akun') }}" method="POST">
 							@csrf
 							<div class="mb-3">
 								<label for="nomor_whatsapp" class="form-label">Nomor Telepon</label>
