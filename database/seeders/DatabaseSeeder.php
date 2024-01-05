@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
         User::create(
             [
                 'nomor_whatsapp' => '081108120813',
-                'password' => Hash::make('Barangku2023'),
-                'secret_key' => Crypt::encryptString('Barangku2023', env('APP_KEY')),
+                'password' => Hash::make('Barangku2024'),
+                'secret_key' => Crypt::encryptString('Barangku2024', env('APP_KEY')),
                 'role' => 'Admin',
             ]
         );
