@@ -1,15 +1,18 @@
 <!-- FAQ: Start -->
-<section id="ilustrasi" class="section-py bg-body landing-faq">
+<section id="ilustrasi" class="section-py landing-faq">
 	<div class="container">
 		<div class="text-center mb-3 pb-1">
-			<span class="badge bg-label-primary">FAQ</span>
+			<span class="badge bg-label-primary">Ilustrasi</span>
 		</div>
-		<h3 class="text-center mb-1">Frequently asked <span class="section-title">questions</span></h3>
-		<p class="text-center mb-5 pb-3">Browse through these FAQs to find answers to commonly asked questions.</p>
+		<div class="mb-3" style="display: flex; justify-content: center;">
+			<h3 id="deskripsi-app" class="text-center mb-1">
+				Berikut ini beberapa ilustrasi dalam penggunaan aplikasi <span class="section-title">Barangku </span>
+			</h3>
+		</div>
 		<div class="row gy-5">
 			<div class="col-lg-5">
 				<div class="text-center">
-					<img src="{{ asset('vuexy/assets/img/front-pages/landing-page/faq-boy-with-logos.png') }}" alt="faq boy with logos"
+					<img src="{{ asset('vuexy/assets/img/illustrations/page-misc-under-maintenance.png') }}" alt="faq boy with logos"
 						class="faq-image" />
 				</div>
 			</div>
@@ -19,31 +22,40 @@
 						<h2 class="accordion-header" id="headingOne">
 							<button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionOne"
 								aria-expanded="true" aria-controls="accordionOne">
-								Do you charge for each upgrade?
+								Ilustrasi Pertama
 							</button>
 						</h2>
 
 						<div id="accordionOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
 							<div class="accordion-body">
-								Lemon drops chocolate cake gummies carrot cake chupa chups muffin topping. Sesame snaps icing
-								marzipan gummi bears macaroon dragée danish caramels powder. Bear claw dragée pastry topping
-								soufflé. Wafer gummi bears marshmallow pastry pie.
-							</div>
-						</div>
-					</div>
-					<div class="card accordion-item">
-						<h2 class="accordion-header" id="headingTwo">
-							<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-								data-bs-target="#accordionTwo" aria-expanded="false" aria-controls="accordionTwo">
-								Do I need to purchase a license for each website?
-							</button>
-						</h2>
-						<div id="accordionTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-							data-bs-parent="#accordionExample">
-							<div class="accordion-body">
-								Dessert ice cream donut oat cake jelly-o pie sugar plum cheesecake. Bear claw dragée oat cake
-								dragée ice cream halvah tootsie roll. Danish cake oat cake pie macaroon tart donut gummies. Jelly
-								beans candy canes carrot cake. Fruitcake chocolate chupa chups.
+								<p>
+									Pak Alif pada tanggal 4 Januari 2024 jam 10.00 pagi merencanakan akan memindahkan 1 unit lemari pakaian dari
+									kamarnya ke gudang belakang, karena lemari yang baru akan datang pada tanggal 5 Januari 2024. Untuk pemindahan
+									lemari dibutuhkan bantuan Pak Dwi dan Pak Tri, sehingga perlu menghubungi mereka pada tanggal 3 Januari 2024
+									pada pukul 11.00 yang dijadikan sebagai jadwal Notifikasi.
+								</p>
+								<p>
+									Tahapan Pak Alif menggunakan Aplikasi Barangku :
+									<br>
+									Langkah 1. Pak Alif foto lemari terlebih dahulu dan disimpan pada perangkat.
+									<br>
+									Langkah 2. Menginput data pada Aplikasi Barangku berdasarkan kolom berikut :
+								<ul>
+									<li>Nama Barang - ketik Lemari Pakaian di Kamar</li>
+									<li>Kategori - pilih “Peralatan”</li>
+									<li>Rencana - pilih “Dipindahkan”</li>
+									<li>Dipindahkan kemana - ketik ke Gudang Belakang</li>
+									<li>Jumlah – ketik 1 unit</li>
+									<li>Letak barang saat ini - ketik di Kamar</li>
+									<li>Keterangan isi - Dibutuhkan bantuan Pak Dwi dan Pak Tri</li>
+									<li>Jadwal Rencana - pilih 4 Januari 2024 Pukul 10.00</li>
+									<li>Jadwal Notifikasi - pilih “Isi Sendiri”, dan pilih 3 Januari 2024 Pukul 11.00.</li>
+									<li>Upload Foto - pilih foto lemari yang telah tersimpan pada folder gambar di perangkat.</li>
+								</ul>
+								Langkah 3. Baca notifikasi yang keluar pada tanggal 3 Januari 2024 Pukul 11.00.
+								<br>
+								Langkah 4. Jika aksi telah selesai dilakukan, Pak Alif ubah progress menjadi “Selesai”
+								</p>
 							</div>
 						</div>
 					</div>
@@ -51,50 +63,36 @@
 						<h2 class="accordion-header" id="headingThree">
 							<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
 								data-bs-target="#accordionThree" aria-expanded="false" aria-controls="accordionThree">
-								What is regular license?
+								Ilustrasi Kedua
 							</button>
 						</h2>
 						<div id="accordionThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
 							data-bs-parent="#accordionExample">
 							<div class="accordion-body">
-								Regular license can be used for end products that do not charge users for access or service(access
-								is free and there will be no monthly subscription fee). Single regular license can be used for
-								single end product and end product can be used by you or your client. If you want to sell end
-								product to multiple clients then you will need to purchase separate license for each client. The
-								same rule applies if you want to use the same end product on multiple domains(unique setup). For
-								more info on regular license you can check official description.
-							</div>
-						</div>
-					</div>
-					<div class="card accordion-item">
-						<h2 class="accordion-header" id="headingFour">
-							<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-								data-bs-target="#accordionFour" aria-expanded="false" aria-controls="accordionFour">
-								What is extended license?
-							</button>
-						</h2>
-						<div id="accordionFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-							data-bs-parent="#accordionExample">
-							<div class="accordion-body">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis et aliquid quaerat possimus maxime!
-								Mollitia reprehenderit neque repellat deleniti delectus architecto dolorum maxime, blanditiis
-								earum ea, incidunt quam possimus cumque.
-							</div>
-						</div>
-					</div>
-					<div class="card accordion-item">
-						<h2 class="accordion-header" id="headingFive">
-							<button type="button" class="accordion-button collapsed" data-bs-toggle="collapse"
-								data-bs-target="#accordionFive" aria-expanded="false" aria-controls="accordionFive">
-								Which license is applicable for SASS application?
-							</button>
-						</h2>
-						<div id="accordionFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
-							data-bs-parent="#accordionExample">
-							<div class="accordion-body">
-								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi molestias exercitationem ab cum
-								nemo facere voluptates veritatis quia, eveniet veniam at et repudiandae mollitia ipsam quasi
-								labore enim architecto non!
+								<p>
+									Bu Ana pada tanggal 5 Januari 2024 jam 17.00 untuk makan malam di rumah merencanakan akan membeli 10 bungkus
+									nasi padang di Rumah Makan Uda Jon 2 di Jalan Sudirman. Jadwal notifikasi sesuai dengan jadwal rencana aksi.
+									Nasi yang nantinya telah dibeli akan diletakan di atas meja makan.
+								</p>
+								<p>
+									Tahapan Bu Ana menggunakan Aplikasi Barangku :
+									Langkah 1. Menginput data pada Aplikasi Barangku berdasarkan kolom berikut :
+								<ul>
+									<li>Nama Barang - ketik Nasi Padang Uda Jon</li>
+									<li>Kategori - pilih “Kuliner”</li>
+									<li>Rencana - pilih “Dibeli”</li>
+									<li>Dibeli dimana - ketik Rumah Makan Uda Jon 2 di Jalan Sudirman.</li>
+									<li>Jumlah - isi 10 bungkus</li>
+									<li>Akan diletakkan dimana - ketik di Meja Makan</li>
+									<li>Keterangan - tidak diisi</li>
+									<li>Jadwal Rencana - pilih 5 Januari 2024 Pukul 17.00</li>
+									<li>Jadwal Notifikasi - pilih “Jadwal Rencana”</li>
+									<li>Upload Foto - tidak diisi</li>
+								</ul>
+								Langkah 3. Baca notifikasi yang keluar pada tanggal 5 Januari 2024 Pukul 17.00.
+								<br>
+								Langkah 4. Jika aksi telah selesai dilakukan, Bu Ana ubah progress menjadi “Selesai”
+								</p>
 							</div>
 						</div>
 					</div>
@@ -106,7 +104,7 @@
 <!-- FAQ: End -->
 
 <!-- CTA: Start -->
-<section id="landingCTA" class="section-py landing-cta p-lg-0 pb-0">
+{{-- <section id="landingCTA" class="section-py landing-cta p-lg-0 pb-0">
 	<div class="container">
 		<div class="row align-items-center gy-5 gy-lg-0">
 			<div class="col-lg-6 text-center text-lg-start">
@@ -120,5 +118,5 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> --}}
 <!-- CTA: End -->

@@ -2,14 +2,16 @@
 <section id="harga" class="section-py bg-body landing-pricing">
 	<div class="container">
 		<div class="text-center mb-3 pb-1">
-			<span class="badge bg-label-primary">Pricing Plans</span>
+			<span class="badge bg-label-primary">Harga</span>
 		</div>
-		<h3 class="text-center mb-1"><span class="section-title">Tailored pricing plans</span> designed for you</h3>
-		<p class="text-center mb-4 pb-3">
-			All plans include 40+ advanced tools and features to boost your product.<br />Choose the best plan to fit
-			your needs.
-		</p>
-		<div class="text-center mb-5">
+		<div class="mb-3" style="display: flex; justify-content: center;">
+			<h3 id="deskripsi-app" class="text-center mb-1">
+				<span class="section-title">Barangku </span> menyediakan harga akun yang sangat terjangkau untuk Anda. Anda dapat
+				menjual kembali akun tersebut jika <a target="_blank" href="https://barangku.web.id/rekrutmen">mendaftar menjadi
+					Mitra Marketing kami</a>
+			</h3>
+		</div>
+		{{-- <div class="text-center mb-5">
 			<div class="position-relative d-inline-block pt-3 pt-md-0">
 				<label class="switch switch-primary me-0">
 					<span class="switch-label">Pay Monthly</span>
@@ -26,10 +28,10 @@
 					<span class="fw-semibold mt-2 ms-1"> Save 25%</span>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 		<div class="row gy-4 pt-lg-3">
 			<!-- Basic Plan: Start -->
-			<div class="col-xl-4 col-lg-6">
+			{{-- <div class="col-xl-4 col-lg-6">
 				<div class="card">
 					<div class="card-header">
 						<div class="text-center">
@@ -103,73 +105,77 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 			<!-- Basic Plan: End -->
 
 			<!-- Favourite Plan: Start -->
-			<div class="col-xl-4 col-lg-6">
-				<div class="card border border-primary shadow-lg">
-					<div class="card-header">
-						<div class="text-center">
-							<img src="{{ asset('vuexy/assets/img/front-pages/icons/plane.png') }}" alt="plane icon" class="mb-4 pb-2" />
-							<h4 class="mb-1">Team</h4>
-							<div class="d-flex align-items-center justify-content-center">
-								<span class="price-monthly h1 text-primary fw-bold mb-0">$29</span>
-								<span class="price-yearly h1 text-primary fw-bold mb-0 d-none">$22</span>
-								<sub class="h6 text-muted mb-0 ms-1">/mo</sub>
-							</div>
-							<div class="position-relative pt-2">
-								<div class="price-yearly text-muted price-yearly-toggle d-none">$ 264 / year</div>
+			<div class="col-xl-12 col-lg-12">
+				<div style="display: flex; justify-content: center;">
+					<div id="card-harga" class="card border border-primary shadow-lg">
+						<div class="card-header">
+							<div class="text-center">
+								<img src="{{ asset('vuexy/assets/img/front-pages/icons/diamond-info.png') }}" alt="plane icon"
+									class="mb-4 pb-2" />
+								<h4 class="mb-1">Harga Akun</h4>
+								<div class="d-flex align-items-center justify-content-center">
+									<span class="price-monthly h1 text-primary fw-bold mb-0">Rp </span>
+									<span class="price-yearly h1 text-primary fw-bold mb-0">100.000</span>
+									<sub class="h6 text-muted mb-0 ms-1">/akun</sub>
+								</div>
+								<div class="position-relative pt-2">
+									<div class="price-yearly text-muted price-yearly-toggle">Rp 250.000 /3 akun</div>
+								</div>
 							</div>
 						</div>
-					</div>
-					<div class="card-body">
-						<ul class="list-unstyled">
-							<li>
-								<h5>
-									<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-									Everything in basic
-								</h5>
-							</li>
-							<li>
-								<h5>
-									<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-									Timeline with database
-								</h5>
-							</li>
-							<li>
-								<h5>
-									<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-									Advanced search
-								</h5>
-							</li>
-							<li>
-								<h5>
-									<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-									Marketing automation
-								</h5>
-							</li>
-							<li>
-								<h5>
-									<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-									Advanced chatbot
-								</h5>
-							</li>
-							<li>
-								<h5>
-									<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-									Campaign management
-								</h5>
-							</li>
-							<li>
-								<h5>
-									<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
-									Collaboration tools
-								</h5>
-							</li>
-						</ul>
-						<div class="d-grid mt-4 pt-3">
-							<a href="payment-page.html" class="btn btn-primary">Get Started</a>
+						<div class="card-body">
+							{{-- <ul class="list-unstyled">
+								<li>
+									<h5>
+										<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+										Everything in basic
+									</h5>
+								</li>
+								<li>
+									<h5>
+										<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+										Timeline with database
+									</h5>
+								</li>
+								<li>
+									<h5>
+										<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+										Advanced search
+									</h5>
+								</li>
+								<li>
+									<h5>
+										<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+										Marketing automation
+									</h5>
+								</li>
+								<li>
+									<h5>
+										<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+										Advanced chatbot
+									</h5>
+								</li>
+								<li>
+									<h5>
+										<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+										Campaign management
+									</h5>
+								</li>
+								<li>
+									<h5>
+										<span class="badge badge-center rounded-pill bg-primary p-0 me-2"><i class="ti ti-check ti-xs"></i></span>
+										Collaboration tools
+									</h5>
+								</li>
+							</ul> --}}
+							<p class="text-center">Masa aktif selama 1 tahun</p>
+							<div class="d-grid mt-4 pt-3">
+								<a target="_blank" href="https://wa.me/+6281367676651" class="btn btn-primary">Daftar Sekarang</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -177,7 +183,7 @@
 			<!-- Favourite Plan: End -->
 
 			<!-- Standard Plan: Start -->
-			<div class="col-xl-4 col-lg-6">
+			{{-- <div class="col-xl-4 col-lg-6">
 				<div class="card">
 					<div class="card-header">
 						<div class="text-center">
@@ -251,7 +257,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 			<!-- Standard Plan: End -->
 		</div>
 	</div>
@@ -259,7 +265,7 @@
 <!-- Pricing plans: End -->
 
 <!-- Fun facts: Start -->
-<section id="landingFunFacts" class="section-py landing-fun-facts">
+{{-- <section id="landingFunFacts" class="section-py landing-fun-facts">
 	<div class="container">
 		<div class="row gy-3">
 			<div class="col-sm-6 col-lg-3">
@@ -312,5 +318,5 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> --}}
 <!-- Fun facts: End -->

@@ -1,6 +1,6 @@
 <section id="ketentuanMitra" class="section-py bg-body landing-faq">
 	<div class="container">
-		<h2 class="border-bottom pb-2 mb-3">Ketentuan Mitra Marketing Wilayah Barangku</h2>
+		<h2 class="border-bottom pb-2 mb-3">Ketentuan Mitra Marketing Barangku</h2>
 		<div class="row">
 			<div class="col-xl-3 col-lg-4 mb-3">
 				<span class="p-2 d-inline-block bg-light border mx-2 shadow-sm rounded" style="border-color: #dedede !important">
@@ -10,16 +10,15 @@
 			</div>
 			<div class="col-xl-9 col-lg-8 mb-3">
 				<p class="text-dark">
-					<b>Barangku</b> merupakan Aplikasi Mobile untuk mengontrol dan mendokumentasikan proses beramal para Sobat Muslim.
-					Proses yang diawali dengan merencanakan niat amalan beserta target yang akan menerimanya, lalu mencatat realisasi
-					pemberian guna memantau pencapaian target. Kategori amalan dalam bentuk : zakat, infaq, sedekah, nazar, wakaf,
-					dan hadiah.
+					<b>Barangku</b> merupakan aplikasi mobile untuk mencatat dan mengingatkan rencana tindakan terhadap barang-barang
+					yang dimiliki atau pun hendak dimiliki. More detail: <a target="_blank"
+						href="https://barangku.web.id">https://barangku.web.id</a>
 				</p>
 				<p>
-					<b>Mitra Marketing Wilayah</b> adalah seseorang yang bekerjasama dengan Barangku sebagai mitra pemasaran pada
-					wilayah yang telah disepakati. Tugas utama adalah <b>mencari</b> dan <b>mengajak</b> calon pengguna, serta
-					<b>membantu</b> dalam proses administrasi untuk menjadi pengguna aplikasi Barangku (mulai dari pendaftaran akun
-					sampai pembayaran).
+					<b>Mitra Marketing</b> adalah seseorang yang bekerjasama dengan pengelola aplikasi <b>Barangku</b> sebagai mitra
+					pemasaran aplikasi <b>Barangku</b>. Tugas utama adalah mencari dan mengajak calon pengguna, serta membantu dalam
+					proses administrasi untuk menjadi pengguna aplikasi <b>Barangku</b> (mulai dari pendaftaran akun sampai
+					pembayaran).
 				</p>
 			</div>
 		</div>
