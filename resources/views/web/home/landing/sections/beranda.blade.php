@@ -8,10 +8,11 @@
 					"Aplikasi Untuk Memaknai Setiap Barang Yang Dimiliki"
 				</h2>
 				<div class="landing-hero-btn d-block position-relative">
-					<a class="footer-link mb-2 pb-2">
+					<a href="https://apps.apple.com/id/app/barangku/id6467518158?l=id" target="_blank" class="footer-link mb-2 pb-2">
 						<img src="{{ asset('vuexy/assets/img/front-pages/landing-page/apple-icon.png') }}" alt="apple icon">
 					</a>
-					<a class="footer-link">
+					<a href="https://play.google.com/store/apps/details?id=com.barangku.app&pcampaignid=web_share" target="_blank"
+						class="footer-link">
 						<img src="{{ asset('vuexy/assets/img/front-pages/landing-page/google-play-icon.png') }}" alt="google play icon">
 					</a>
 				</div>
