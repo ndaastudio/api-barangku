@@ -20,8 +20,7 @@ class Mitra extends Model
 
     public function previewCV()
     {
-        ///get url path of file
         $path = Storage::url($this->dokumen_cv);
-        return asset($path);
+        return asset("public/$path");
     }
 }
