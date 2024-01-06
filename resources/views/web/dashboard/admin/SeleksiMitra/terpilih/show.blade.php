@@ -105,8 +105,8 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-6">
-				<iframe style="height: 80vh" src="{{ $mitra->previewCV() }}" frameBorder="0" scrolling="auto"
-					width="100%"></iframe>
+				<iframe style="height: 80vh" src="{{ asset('storage/public/' . $mitra->dokumen_cv) }}" frameBorder="0"
+					scrolling="auto" width="100%"></iframe>
 			</div>
 		</div>
 	</div>

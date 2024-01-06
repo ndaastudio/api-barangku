@@ -5,7 +5,6 @@ namespace App\Models;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Support\Facades\Storage;
 
 class Mitra extends Model
 {
@@ -16,11 +15,5 @@ class Mitra extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function previewCV()
-    {
-        $path = Storage::url($this->dokumen_cv);
-        return asset("public/$path");
     }
 }
