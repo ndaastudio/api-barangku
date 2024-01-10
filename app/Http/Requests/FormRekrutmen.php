@@ -32,7 +32,7 @@ class FormRekrutmen extends FormRequest
             'nomor_telepon' => 'required|numeric|unique:mitra,nomor_telepon|digits_between:10,13',
             'nomor_whatsapp' => 'required|numeric|unique:mitra,nomor_whatsapp|digits_between:10,13',
             'pekerjaan' => 'required|min:10',
-            'dokumen_cv' => 'required|mimetypes:application/pdf|max:5120',
+            'dokumen_cv' => 'required|max:5120|image',
             'check1' => 'required',
             'check2' => 'required',
         ];
@@ -58,9 +58,9 @@ class FormRekrutmen extends FormRequest
             'nomor_whatsapp.digits_between' => 'Nomor WhatsApp minimal 10 digit dan maksimal 13 digit',
             'pekerjaan.required' => 'Pekerjaan tidak boleh kosong',
             'pekerjaan.min' => 'Pekerjaan minimal 10 karakter',
-            'dokumen_cv.required' => 'Dokumen CV tidak boleh kosong',
-            'dokumen_cv.mimetypes' => 'Dokumen CV harus berupa file PDF',
-            'dokumen_cv.max' => 'Dokumen CV maksimal 5 MB',
+            'dokumen_cv.required' => 'Foto KTP tidak boleh kosong',
+            'dokumen_cv.max' => 'Foto KTP maksimal 5 MB',
+            'dokumen_cv.image' => 'Foto KTP harus berupa gambar',
         ];
     }
 

@@ -107,13 +107,13 @@
 			<div class="row">
 				<div class="col-lg-12 mb-3">
 					<div>
-						<label for="dokumen" class="form-label">Dokumen Curriculum Vitae + Foto KTP + Foto Diri</label>
+						<label for="dokumen" class="form-label">Foto KTP</label>
 						<input class="form-control {{ $errors->has('dokumen_cv') ? 'is-invalid' : '' }}" type="file" id="dokumen"
-							name="dokumen_cv">
+							name="dokumen_cv" accept="image/*">
 						@if ($errors->has('dokumen_cv'))
 							<div class="invalid-feedback">{{ $errors->first('dokumen_cv') }}</div>
 						@endif
-						<small class="text-muted">Kirim 1 (satu) File Dokumen dalam bentuk PDF. Ukuran
+						<small class="text-muted">Ukuran
 							file maksimal
 							5MB.</small>
 					</div>
