@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('nomor_telepon');
             $table->string('nomor_whatsapp');
             $table->longText('pekerjaan');
-            $table->string('dokumen_cv');
+            $table->string('dokumen_ktp');
             $table->integer('check1');
             $table->integer('check2');
             $table->integer('status_tahap');

@@ -26,10 +26,10 @@
 				Pembayaran
 			</a>
 		</li>
-		<li class="menu-item">
-			<a href="{{ route('kuota-marketing.atur-pembayaran') }}" class="menu-link">
-				Atur Pembayaran
-			</a>
-		</li>
 	</ul>
+</li>
+<li class="menu-item {{ $isActive === 'harga-jual' ? 'active' : '' }}">
+	<a href="{{ route('harga-jual') }}" class="menu-link">
+		<i class="menu-icon tf-icons ti ti-coin"></i>Harga Jual
+	</a>
 </li>

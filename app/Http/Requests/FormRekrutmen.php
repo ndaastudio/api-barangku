@@ -32,7 +32,7 @@ class FormRekrutmen extends FormRequest
             'nomor_telepon' => 'required|numeric|unique:mitra,nomor_telepon|digits_between:10,13',
             'nomor_whatsapp' => 'required|numeric|unique:mitra,nomor_whatsapp|digits_between:10,13',
             'pekerjaan' => 'required|min:10',
-            'dokumen_cv' => 'required|max:5120|image',
+            'dokumen_ktp' => 'required|max:2048|image|mimes:jpg,jpeg,png',
             'check1' => 'required',
             'check2' => 'required',
         ];
@@ -58,9 +58,10 @@ class FormRekrutmen extends FormRequest
             'nomor_whatsapp.digits_between' => 'Nomor WhatsApp minimal 10 digit dan maksimal 13 digit',
             'pekerjaan.required' => 'Pekerjaan tidak boleh kosong',
             'pekerjaan.min' => 'Pekerjaan minimal 10 karakter',
-            'dokumen_cv.required' => 'Foto KTP tidak boleh kosong',
-            'dokumen_cv.max' => 'Foto KTP maksimal 5 MB',
-            'dokumen_cv.image' => 'Foto KTP harus berupa gambar',
+            'dokumen_ktp.required' => 'Foto KTP tidak boleh kosong',
+            'dokumen_ktp.max' => 'Foto KTP maksimal 2 MB',
+            'dokumen_ktp.image' => 'Foto KTP harus berupa gambar',
+            'dokumen_ktp.mimes' => 'Format file harus berupa jpg, jpeg, atau png'
         ];
     }
 
@@ -70,8 +71,8 @@ class FormRekrutmen extends FormRequest
         $validated['nomor_telepon'] = '0' . $validated['nomor_telepon'];
         $validated['nomor_whatsapp'] = '0' . $validated['nomor_whatsapp'];
         $validated['status_tahap'] = '1';
-        $fileName = 'CV' . '_' . $validated['nama'] . '_' . $validated['nomor_whatsapp'] . '.' . $this->file('dokumen_cv')->extension();
-        $validated['dokumen_cv'] = $this->file('dokumen_cv')->storeAs('Dokumen-CV', $fileName, 'public');
+        $fileName = 'CV' . '_' . $validated['nama'] . '_' . $validated['nomor_whatsapp'] . '.' . $this->file('dokumen_ktp')->extension();
+        $validated['dokumen_ktp'] = $this->file('dokumen_ktp')->storeAs('Dokumen-KTP', $fileName, 'public');
         return $validated;
     }
 }

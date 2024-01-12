@@ -12,7 +12,7 @@
 				hendak dimiliki
 			</h3>
 		</div>
-		<div class="features-icon-wrapper row gx-0 gy-4 g-sm-5">
+		<div class="features-icon-wrapper row gx-0 gy-4 g-sm-5" style="margin-bottom: 4rem;">
 			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
 				<div class="text-center mb-3">
 					<img src="{{ asset('vuexy/assets/img/front-pages/icons/keyboard.png') }}" alt="google docs" />
@@ -38,6 +38,46 @@
 				<p class="features-icon-description">
 					Aplikasi Barangku membantu Anda menandai rencana yang telah selesai dengan ubah status "Selesai"
 				</p>
+			</div>
+		</div>
+		<div class="mb-3" style="display: flex; justify-content: center;">
+			<h3 id="deskripsi-app" class="text-center mb-1">
+				Manfaat menggunakan aplikasi <span class="section-title">Barangku</span>
+			</h3>
+		</div>
+		<div class="features-icon-wrapper row gx-0 gy-4 g-sm-5" style="margin-bottom: 4rem;">
+			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+				<div class="card border border-label-info shadow-none" style="height: 16rem; overflow: hidden;">
+					<div class="card-body text-center">
+						<h1 class="mb-2 text-primary hero-title display-6 fw-bold">1</h1>
+						<p class="features-icon-description">
+							Media mencatat aksi (hal yang akan dilakukan) terhadap barang yang dimiliki atau pun hendak dimiliki, sehingga
+							pengguna aplikasi tidak akan lupa dan kehilangan rencana aksi terhadap barang
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+				<div class="card border border-label-info shadow-none" style="height: 16rem; overflow: hidden;">
+					<div class="card-body text-center">
+						<h1 class="mb-2 text-primary hero-title display-6 fw-bold">2</h1>
+						<p class="features-icon-description">
+							Media yang akan mengingatkan aksi terhadap barang yang telah dicatatkan, sehingga pengguna aplikasi akan
+							diingatkan untuk segera melakukan aksi terhadap barang sesuai jadwal notifikasi
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+				<div class="card border border-label-info shadow-none" style="height: 16rem; overflow: hidden;">
+					<div class="card-body text-center">
+						<h1 class="mb-2 text-primary hero-title display-6 fw-bold">3</h1>
+						<p class="features-icon-description">
+							Media yang mengumpulkan data-data barang dan rencana aksi terhadap barang tersebut, sehingga ketika pengguna
+							membuka aplikasi dan membaca data yang ada, maka akan mengingatkan kembali akan barang dan rencana aksinya
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

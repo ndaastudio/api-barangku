@@ -2,13 +2,28 @@
 
 @section('content')
 	<div class="card">
-		<form action="{{ route('kuota-marketing.atur-pembayaran') }}" method="POST">
+		<form action="{{ route('harga-jual.edit') }}" method="POST">
 			@csrf
 			@method('PUT')
-			<h5 class="card-header">Silahkan atur pembayaran Anda</h5>
 			<div class="card-body">
+				<h5>Silahkan atur Harga Jual Anda</h5>
+				<div class="mb-3">
+					<label for="harga_kode" class="form-label">Harga Kode Daftar</label>
+					<div class="input-group">
+						<span class="input-group-text" id="harga_kode">Rp</span>
+						<input oninput="formatNominal(this)" name="harga_kode" type="text"
+							class="form-control {{ $errors->has('harga_kode') ? 'is-invalid' : '' }}" id="harga_kode"
+							placeholder="Harga yang akan dijual"
+							value="{{ old('harga_kode', number_format($mitra->harga_kode, 0, ',', '.')) }}">
+						@if ($errors->has('harga_kode'))
+							<div class="invalid-feedback">{{ $errors->first('harga_kode') }}</div>
+						@endif
+					</div>
+				</div>
+				<br>
+				<h5>Silahkan atur Pembayaran Anda</h5>
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<div class="mb-3">
 							<label for="nama_rekening" class="form-label">Nama Pemilik Rekening</label>
 							<input name="nama_rekening" type="text"
@@ -38,20 +53,6 @@
 							@if ($errors->has('nomor_rekening'))
 								<div class="invalid-feedback">{{ $errors->first('nomor_rekening') }}</div>
 							@endif
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="mb-3">
-							<label for="harga_kode" class="form-label">Harga Kode Daftar</label>
-							<div class="input-group">
-								<span class="input-group-text" id="harga_kode">Rp</span>
-								<input name="harga_kode" type="number"
-									class="form-control {{ $errors->has('harga_kode') ? 'is-invalid' : '' }}" id="harga_kode"
-									placeholder="Harga yang akan dijual" value="{{ old('harga_kode', $mitra->harga_kode) }}">
-								@if ($errors->has('harga_kode'))
-									<div class="invalid-feedback">{{ $errors->first('harga_kode') }}</div>
-								@endif
-							</div>
 						</div>
 					</div>
 				</div>

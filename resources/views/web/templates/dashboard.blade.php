@@ -101,6 +101,11 @@
 							<i class="menu-icon tf-icons ti ti-home"></i>Dashboard
 						</a>
 					</li>
+					<li class="menu-item {{ $isActive === 'password' ? 'active' : '' }}">
+						<a href="{{ route('password') }}" class="menu-link">
+							<i class="menu-icon tf-icons ti ti-key"></i>Password
+						</a>
+					</li>
 					<!-- Misc -->
 					@if (Auth::user()->role === 'Admin')
 						@include('web.dashboard.admin.sidebar-menu')
@@ -362,6 +367,20 @@
 					$('#formHapusAkun' + id).submit();
 				}
 			})
+		}
+
+		function formatNominal(input) {
+			// Menghapus karakter selain digit
+			let nominal = input.value.replace(/\D/g, '');
+
+			// Memastikan input memiliki nilai
+			if (nominal) {
+				// Mengonversi string ke dalam format ribuan
+				nominal = Number(nominal).toLocaleString();
+
+				// Menetapkan nilai kembali ke input
+				input.value = nominal;
+			}
 		}
 	</script>
 

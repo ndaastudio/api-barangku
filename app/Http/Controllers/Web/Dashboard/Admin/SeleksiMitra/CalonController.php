@@ -53,9 +53,9 @@ class CalonController extends Controller
             DB::beginTransaction();
             $akunMitra = User::where('role', 'Mitra')->where('nomor_whatsapp', Mitra::find($id)->nomor_whatsapp);
             $akunMember = Akun::where('mitra_id', $id);
-            $isExistFile = Storage::disk('public')->exists(Mitra::find($id)->dokumen_cv);
+            $isExistFile = Storage::disk('public')->exists(Mitra::find($id)->dokumen_ktp);
             if ($isExistFile) {
-                Storage::disk('public')->delete(Mitra::find($id)->dokumen_cv);
+                Storage::disk('public')->delete(Mitra::find($id)->dokumen_ktp);
             }
             Mitra::find($id)->delete();
             if ($akunMitra->exists()) {

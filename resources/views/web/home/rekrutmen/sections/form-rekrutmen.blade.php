@@ -108,14 +108,14 @@
 				<div class="col-lg-12 mb-3">
 					<div>
 						<label for="dokumen" class="form-label">Foto KTP</label>
-						<input class="form-control {{ $errors->has('dokumen_cv') ? 'is-invalid' : '' }}" type="file" id="dokumen"
-							name="dokumen_cv" accept="image/*">
-						@if ($errors->has('dokumen_cv'))
-							<div class="invalid-feedback">{{ $errors->first('dokumen_cv') }}</div>
+						<input class="form-control {{ $errors->has('dokumen_ktp') ? 'is-invalid' : '' }}" type="file"
+							id="dokumen" name="dokumen_ktp" accept="image/*">
+						@if ($errors->has('dokumen_ktp'))
+							<div class="invalid-feedback">{{ $errors->first('dokumen_ktp') }}</div>
 						@endif
-						<small class="text-muted">Ukuran
+						<small class="text-muted">Format file yang diizinkan: jpg, jpeg, dan png. Ukuran
 							file maksimal
-							5MB.</small>
+							2MB.</small>
 					</div>
 				</div>
 			</div>
@@ -123,7 +123,7 @@
 				<input id="check1" class="form-check-input" type="checkbox" value="1" name="check1"
 					{{ old('check1') == '1' ? 'checked' : '' }}>
 				<label class="form-check-label" for="check1">
-					Saya menyatakan telah membaca dan memahami isi <a href="{{ route('rekrutmen') }}">“Ketentuan Mitra
+					Saya menyatakan telah membaca dan memahami isi <a href="#ketentuanMitra">“Ketentuan Mitra
 						Marketing Barangku”</a>
 				</label>
 			</div>
@@ -132,7 +132,7 @@
 					{{ old('check2') == '1' ? 'checked' : '' }}>
 				<label class="form-check-label" for="check2">
 					Saya menyatakan bersedia menjadi Mitra Marketing Barangku, dan akan mengikuti semua <a
-						href="{{ route('rekrutmen') }}">ketentuan</a> yang
+						href="#ketentuanMitra">ketentuan</a> yang
 					ditetapkan oleh Barangku
 				</label>
 			</div>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class FormAturPembayaran extends FormRequest
+class FormHargaJual extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class FormAturPembayaran extends FormRequest
             'nama_rekening' => 'required|string|min:3|max:255',
             'nama_bank' => 'required|string|min:3|max:255',
             'nomor_rekening' => 'required|string|min:6|max:255',
-            'harga_kode' => 'required|integer',
+            'harga_kode' => 'required',
         ];
     }
 
@@ -45,7 +45,6 @@ class FormAturPembayaran extends FormRequest
             'nomor_rekening.min' => 'Nomor rekening minimal 6 karakter',
             'nomor_rekening.max' => 'Nomor rekening maksimal 255 karakter',
             'harga_kode.required' => 'Harga kode daftar tidak boleh kosong',
-            'harga_kode.integer' => 'Harga kode daftar harus berupa angka',
         ];
     }
 }

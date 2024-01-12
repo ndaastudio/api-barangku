@@ -18,9 +18,10 @@ use App\Http\Controllers\Web\Dashboard\MemberMitra\KodeController as KodeDaftarC
 use App\Http\Controllers\Web\Dashboard\MemberMitra\MemberAktifController;
 use App\Http\Controllers\Web\Dashboard\MemberMitra\MemberNonaktifController;
 use App\Http\Controllers\Web\Dashboard\MemberMitra\TelahBayarController;
-use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\KuotaMarketing\AturPembayaranController;
+use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\HargaJualController;
 use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\KuotaMarketing\BayarController as PembayaranController;
 use App\Http\Controllers\Web\Dashboard\Mitra\Pengaturan\KuotaMarketing\BeliController as BeliKuotaMarketingController;
+use App\Http\Controllers\Web\Dashboard\PasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +50,14 @@ Route::controller(DashboardLoginController::class)->group(function () {
     Route::get('/dashboard/logout', 'logout')->name('dashboard.logout');
 });
 
-Route::get('/dashboard', [DashboardHomeController::class, 'index'])->name('dashboard')->middleware('isAuth');
+Route::middleware('isAuth')->group(function () {
+    Route::get('/dashboard', [DashboardHomeController::class, 'index'])->name('dashboard');
+    Route::controller(PasswordController::class)->group(function () {
+        Route::get('/password', 'index')->name('password');
+        Route::get('/password/edit', 'edit')->name('password.edit');
+        Route::put('/password/edit', 'update');
+    });
+});
 
 Route::middleware('isAdmin')->group(function () {
     Route::controller(CalonMitraController::class)->group(function () {
@@ -129,9 +137,10 @@ Route::middleware('isMitra')->group(function () {
         Route::get('/kuota-marketing/bayar/{id}', 'edit');
         Route::delete('/kuota-marketing/bayar/{id}', 'destroy');
     });
-    Route::controller(AturPembayaranController::class)->group(function () {
-        Route::get('/kuota-marketing/atur-pembayaran', 'index')->name('kuota-marketing.atur-pembayaran');
-        Route::put('/kuota-marketing/atur-pembayaran', 'update');
+    Route::controller(HargaJualController::class)->group(function () {
+        Route::get('/harga-jual', 'index')->name('harga-jual');
+        Route::get('/harga-jual/edit', 'edit')->name('harga-jual.edit');
+        Route::put('/harga-jual/edit', 'update');
     });
 });
 

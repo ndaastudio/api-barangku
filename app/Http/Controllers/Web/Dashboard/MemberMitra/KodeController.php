@@ -33,7 +33,7 @@ class KodeController extends Controller
             DB::beginTransaction();
             $mitra = Mitra::where('user_id', Auth::user()->id)->first();
             if ($mitra->nama_rekening == null || $mitra->nama_bank == null || $mitra->nomor_rekening == null || $mitra->harga_kode == null) {
-                return redirect()->back()->with('error', 'Silahkan atur pembayaran Anda terlebih dahulu');
+                return redirect()->back()->with('error', 'Silahkan atur Harga Jual Anda terlebih dahulu');
             }
             if ($mitra->kuota_kode <= 0) {
                 return redirect()->back()->with('error', 'Kuota Kode Daftar telah habis');
