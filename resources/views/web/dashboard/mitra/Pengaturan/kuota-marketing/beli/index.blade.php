@@ -13,7 +13,7 @@
 								<span class="custom-option-body">
 									<i class="ti ti-rocket"></i>
 									<span class="custom-option-title">Pemula</span>
-									<small>Anda akan mendapatkan sebanyak 5 kuota untuk Kode Daftar</small>
+									<small>Anda akan mendapatkan sebanyak 4 kuota untuk Kode Daftar</small>
 								</span>
 								<p>Rp 100.000</p>
 								<input name="jenis_paket" class="form-check-input" type="radio" value="Pemula" id="customRadioIcon1" checked>
@@ -28,12 +28,12 @@
 									<span class="custom-option-title">Berpengalaman</span>
 									<small>Anda akan mendapatkan sebanyak 10 kuota untuk Kode Daftar</small>
 								</span>
-								<p>Rp 250.000</p>
+								<p>Rp 200.000</p>
 								<input name="jenis_paket" class="form-check-input" type="radio" value="Berpengalaman" id="customRadioIcon2">
 							</label>
 						</div>
 					</div>
-					<div class="col-md">
+					{{-- <div class="col-md">
 						<div class="form-check custom-option custom-option-icon">
 							<label class="form-check-label custom-option-content" for="customRadioIcon3">
 								<span class="custom-option-body">
@@ -45,7 +45,7 @@
 								<input name="jenis_paket" class="form-check-input" type="radio" value="Profesional" id="customRadioIcon3">
 							</label>
 						</div>
-					</div>
+					</div> --}}
 				</div>
 			</div>
 			<div class="card-footer d-flex">

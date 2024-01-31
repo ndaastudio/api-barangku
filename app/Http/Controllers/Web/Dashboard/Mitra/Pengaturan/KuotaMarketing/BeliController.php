@@ -25,14 +25,14 @@ class BeliController extends Controller
     {
         $idMitra = Mitra::where('user_id', Auth::user()->id)->value('id');
         $kuotaPaket = [
-            'Pemula' => 5,
+            'Pemula' => 4,
             'Berpengalaman' => 10,
-            'Profesional' => 25,
+            // 'Profesional' => 25,
         ];
         $hargaPaket = [
             'Pemula' => 100000,
-            'Berpengalaman' => 250000,
-            'Profesional' => 600000,
+            'Berpengalaman' => 200000,
+            // 'Profesional' => 600000,
         ];
         $kodePembayaran = rand(100, 999);
         $isCreated = Pembayaran::create([
