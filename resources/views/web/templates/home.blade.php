@@ -101,7 +101,7 @@
 							</script>
 						</span>
 						<a href="https://barangku.web.id" class="fw-medium text-white footer-link">Barangku,</a>
-						<span class="footer-text"> CV. Plaza Info Nusantara</span>
+						<span class="footer-text"> CV. Annafi Group</span>
 					</div>
 					{{-- <div>
 						<a href="https://github.com/pixinvent" class="footer-link me-3" target="_blank">
