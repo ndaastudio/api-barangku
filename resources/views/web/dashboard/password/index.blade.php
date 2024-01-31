@@ -12,7 +12,7 @@
 		</div>
 		<div class="card-footer d-flex">
 			<a href="{{ route('password.edit') }}" class="btn btn-secondary create-new btn-primary ms-auto">
-				Edit Password
+				Ganti Password
 			</a>
 		</div>
 	</div>
