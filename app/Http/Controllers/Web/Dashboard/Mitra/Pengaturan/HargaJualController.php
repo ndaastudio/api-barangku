@@ -37,6 +37,7 @@ class HargaJualController extends Controller
     public function update(FormHargaJual $request)
     {
         $nominal = str_replace('.', '', $request->harga_kode);
+        $nominal = str_replace(',', '', $nominal);
         $isUpdated = Mitra::where('user_id', Auth::user()->id)->update([
             'nama_rekening' => $request->nama_rekening,
             'nama_bank' => $request->nama_bank,
