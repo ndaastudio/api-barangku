@@ -36,6 +36,10 @@ use App\Http\Controllers\Web\Dashboard\PasswordController;
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
 
+Route::get('/download', function () {
+    return view('web.download');
+});
+
 Route::get('/syarat-dan-ketentuan', [SyaratDanKetentuanController::class, 'index']);
 
 Route::get('/rekrutmen', [RekrutmenController::class, 'index'])->name('rekrutmen');
