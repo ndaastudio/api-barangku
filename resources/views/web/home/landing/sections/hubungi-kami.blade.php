@@ -18,7 +18,7 @@
 									<div>
 										<p class="mb-0">Email</p>
 										<h5 class="mb-0">
-											<a href="mailto:admin@barangku.web.id" class="text-heading">admin@barangku.web.id</a>
+											<a href="mailto:contact@barangku.web.id" class="text-heading">contact@barangku.web.id</a>
 										</h5>
 									</div>
 								</div>
@@ -30,8 +30,8 @@
 									</div>
 									<div>
 										<p class="mb-0">WhatsApp</p>
-										<h5 class="mb-0"><a target="_blank" href="https://wa.me/+6281367676651" class="text-heading">+62
-												813-6767-6651</a></h5>
+										<h5 class="mb-0"><a target="_blank" href="https://wa.me/+6285267777823" class="text-heading">+62
+												852-6777-7823</a></h5>
 									</div>
 								</div>
 							</div>
