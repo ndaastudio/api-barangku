@@ -174,7 +174,7 @@
 							</ul> --}}
 							<p class="text-center">Masa aktif selama 1 tahun</p>
 							<div class="d-grid mt-4 pt-3">
-								<a target="_blank" href="https://wa.me/+6281367676651" class="btn btn-primary">Daftar Sekarang</a>
+								<a target="_blank" href="https://wa.me/+6285267777823" class="btn btn-primary">Daftar Sekarang</a>
 							</div>
 						</div>
 					</div>
