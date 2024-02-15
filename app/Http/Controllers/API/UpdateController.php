@@ -9,7 +9,7 @@ class UpdateController extends Controller
 {
     public function getLatestVersion()
     {
-        $getUpdate = Update::select('latest_version', 'url_update')->first();
+        $getUpdate = Update::all()->first();
         return response()->json([
             'status' => true,
             'data' => $getUpdate

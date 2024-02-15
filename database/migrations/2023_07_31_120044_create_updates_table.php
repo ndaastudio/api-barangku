@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('update', function (Blueprint $table) {
             $table->id();
-            $table->string('latest_version');
-            $table->string('url_update');
+            $table->string('android_latest_version');
+            $table->string('android_url_update');
+            $table->string('ios_latest_version');
+            $table->string('ios_url_update');
         });
     }
 
