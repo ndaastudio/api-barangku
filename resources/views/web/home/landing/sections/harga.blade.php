@@ -174,7 +174,9 @@
 							</ul> --}}
 							<p class="text-center">Masa aktif selama 1 tahun</p>
 							<div class="d-grid mt-4 pt-3">
-								<a target="_blank" href="https://wa.me/+6285267777823" class="btn btn-primary">Daftar Sekarang</a>
+								<a target="_blank"
+									href="https://api.whatsapp.com/send?phone=6285267777823&text={{ urlencode('Halo admin Barangku, saya tertarik dengan aplikasi Barangku. Bagaimana cara mendapatkan akses ke aplikasi Barangku? Terima kasih.') }}"
+									class="btn btn-primary">Daftar Sekarang</a>
 							</div>
 						</div>
 					</div>
