@@ -6,9 +6,9 @@ use App\Models\Akun;
 use App\Models\Mitra;
 use App\Models\Barang;
 use App\Models\GambarBarang;
-use App\Models\ReqNonaktifAkun;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\ReqHapusAkun;
 use Illuminate\Support\Facades\Auth;
 
 class MemberNonaktifController extends Controller
@@ -60,7 +60,7 @@ class MemberNonaktifController extends Controller
             DB::beginTransaction();
             $barang = Barang::where('akun_id', $id);
             $gambarBarang = GambarBarang::where('akun_id', $id);
-            $reqNonaktifkanAkun = ReqNonaktifAkun::where('akun_id', $id);
+            $reqNonaktifkanAkun = ReqHapusAkun::where('akun_id', $id);
             if ($barang->exists()) {
                 $barang->delete();
             }
