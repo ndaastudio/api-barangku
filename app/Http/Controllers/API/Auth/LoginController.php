@@ -24,7 +24,7 @@ class LoginController extends Controller
             [
                 'nomor_telepon' => 'required|numeric|digits_between:10,13',
                 'password' => 'required|min:8|max:16',
-                'device_login' => 'required',
+                'konfirmasi_login' => 'required',
             ],
             [
                 'nomor_telepon.required' => 'Nomor telepon tidak boleh kosong',
@@ -33,7 +33,7 @@ class LoginController extends Controller
                 'password.required' => 'Password tidak boleh kosong',
                 'password.min' => 'Password minimal 8 karakter',
                 'password.max' => 'Password maksimal 16 karakter',
-                'device_login.required' => 'Device login tidak boleh kosong',
+                'konfirmasi_login.required' => 'Konfirmasi login tidak boleh kosong',
             ]
         ];
         $validator = Validator::make($request->all(), $validatedData[0], $validatedData[1]);
