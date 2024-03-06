@@ -77,10 +77,26 @@ class LoginController extends Controller
                 'message' => 'Password salah',
             ], 401);
         }
-        $token = $isValidAkun->first()->createToken('auth_token')->plainTextToken;
-        $isValidAkun->first()->update([
-            'device_login' => $request->device_login,
-        ]);
+        // $token = $isValidAkun->first()->createToken('auth_token')->plainTextToken;
+        // $isValidAkun->first()->update([
+        //     'device_login' => $request->device_login,
+        // ]);
+        $token = $isValidAkun->first()->tokens()->where('name', $isValidAkun->first()->email)->first();
+
+        if (!$token) {
+            $token = $isValidAkun->first()->createToken($isValidAkun->first()->email)->plainTextToken;
+        } else if ($token && $request->konfirmasi_login == 1) {
+            $isValidAkun->first()->tokens()->where('name', $isValidAkun->first()->email)->delete();
+            $token = $isValidAkun->first()->createToken($isValidAkun->first()->email)->plainTextToken;
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => [
+                    'confirm' => 'Akun anda sedang digunakan pada perangkat lain. Apakah anda yakin ingin login di perangkat ini?',
+                ]
+            ]);
+        }
+
         return response()->json([
             'status' => true,
             'message' => 'Berhasil login akun',
