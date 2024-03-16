@@ -99,6 +99,32 @@
 				</div>
 			</div>
 		</div>
+
+		<div style="display: flex; justify-content: center; margin-top: 48px;">
+			<h3 id="deskripsi-app" class="text-center mb-1">
+				Beberapa video tentang <span class="section-title">Barangku </span>:
+			</h3>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 my-3">
+				<iframe class="w-100 video-event" style="border-radius: 10px" src="https://www.youtube.com/embed/gM6Lc2TAjCg"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen=""></iframe>
+			</div>
+			<div class="col-lg-4 my-3">
+				<iframe class="w-100 video-event" style="border-radius: 10px" src="https://www.youtube.com/embed/ykxYW2vG8Zc"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen=""></iframe>
+			</div>
+			<div class="col-lg-4 my-3">
+				<iframe class="w-100 video-event" style="border-radius: 10px" src="https://www.youtube.com/embed/kXWpWtMd4Os"
+					title="YouTube video player" frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen=""></iframe>
+			</div>
+		</div>
 	</div>
 </section>
 <!-- FAQ: End -->

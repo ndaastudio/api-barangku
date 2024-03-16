@@ -5,47 +5,67 @@
 			<span class="badge bg-label-primary">Tentang Kami</span>
 		</div>
 		<div class="mb-3" style="display: flex; justify-content: center;">
-			<h3 id="deskripsi-app" class="text-center mb-1">
-				<span class="section-title">Barangku </span> merupakan aplikasi mobile untuk mencatat dan
-				mengingatkan rencana aksi
-				terhadap barang-barang yang dimiliki atau pun
-				hendak dimiliki
+			<h3 id="deskripsi-app" class="text-center mb-4">
+				<span class="section-title">Barangku:</span> Solusi praktis untuk mengatur barang Anda. Catat, ingatkan rencana aksi,
+				dan temukan barang Anda dengan mudah dalam satu aplikasi. Pengalaman pengelolaan barang yang efisien dan efektif!
 			</h3>
 		</div>
 		<div class="features-icon-wrapper row gx-0 gy-4 g-sm-5" style="margin-bottom: 4rem;">
 			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
 				<div class="text-center mb-3">
-					<img src="{{ asset('vuexy/assets/img/front-pages/icons/keyboard.png') }}" alt="google docs" />
+					<i class="fa-solid fa-hand-sparkles text-primary" style="font-size: 4rem;"></i>
 				</div>
-				<h5 class="mb-3">Mencatat</h5>
-				<p class="features-icon-description">Aplikasi Barangku membantu Anda dalam mencatat (menginput) data rencana aksi
+				<h5 class="mb-3">Aksi</h5>
+				<p class="features-icon-description">Barangku membantu Anda dalam mencatat (menginput) data rencana aksi
 					terhadap suatu barang</p>
 			</div>
 			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
 				<div class="text-center mb-3">
-					<img src="{{ asset('vuexy/assets/img/front-pages/icons/paper.png') }}" alt="edit" />
+					<i class="fa-solid fa-map-location-dot text-primary" style="font-size: 4rem;"></i>
 				</div>
-				<h5 class="mb-3">Notifikasi</h5>
-				<p class="features-icon-description">
-					Aplikasi Barangku menyediakan fitur notifikasi pengingat untuk rencana aksi yang telah Anda buat
-				</p>
+				<h5 class="mb-3">Letak</h5>
+				<p class="features-icon-description">Barangku membantu Anda mencatat dan mengetahui letak barang agar terorganisir
+					dengan baik</p>
 			</div>
 			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
 				<div class="text-center mb-3">
-					<img src="{{ asset('vuexy/assets/img/front-pages/icons/check.png') }}" alt="3d select solid" />
+					<i class="fa-solid fa-image text-primary" style="font-size: 4rem;"></i>
 				</div>
-				<h5 class="mb-3">Menandai</h5>
-				<p class="features-icon-description">
-					Aplikasi Barangku membantu Anda menandai rencana yang telah selesai dengan ubah status "Selesai"
-				</p>
+				<h5 class="mb-3">Galeri</h5>
+				<p class="features-icon-description">Simpan detail penting setiap barang di galeri Barangku untuk memudahkan
+					pencarian</p>
+			</div>
+			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+				<div class="text-center mb-3">
+					<i class="fa-solid fa-chart-column text-primary" style="font-size: 4rem;"></i>
+				</div>
+				<h5 class="mb-3">Statistik</h5>
+				<p class="features-icon-description">Visualisasi statistik barang untuk melihat jumlah barang Anda secara visual dan
+					terperinci</p>
+			</div>
+			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+				<div class="text-center mb-3">
+					<i class="fa-solid fa-bell text-primary" style="font-size: 4rem;"></i>
+				</div>
+				<h5 class="mb-3">Notifikasi</h5>
+				<p class="features-icon-description">Barangku menyediakan fitur notifikasi pengingat untuk rencana aksi
+					terhadap barang yang dicatat</p>
+			</div>
+			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
+				<div class="text-center mb-3">
+					<i class="fa-solid fa-cloud text-primary" style="font-size: 4rem;"></i>
+				</div>
+				<h5 class="mb-3">Backup Data (sedang perbaikan)</h5>
+				<p class="features-icon-description">Data yang Anda catat di Barangku dapat di-backup dan tersinkronisasi pada
+					setiap perangkat Anda</p>
 			</div>
 		</div>
-		<div class="mb-3" style="display: flex; justify-content: center;">
+		{{-- <div class="mb-3" style="display: flex; justify-content: center;">
 			<h3 id="deskripsi-app" class="text-center mb-1">
 				Manfaat menggunakan aplikasi <span class="section-title">Barangku</span>
 			</h3>
-		</div>
-		<div class="features-icon-wrapper row gx-0 gy-4 g-sm-5" style="margin-bottom: 4rem;">
+		</div> --}}
+		{{-- <div class="features-icon-wrapper row gx-0 gy-4 g-sm-5" style="margin-bottom: 4rem;">
 			<div class="col-lg-4 col-sm-6 text-center features-icon-box">
 				<div class="card border border-label-info shadow-none" style="height: 16rem; overflow: hidden;">
 					<div class="card-body text-center">
@@ -79,20 +99,144 @@
 					</div>
 				</div>
 			</div>
+		</div> --}}
+
+		<div class="mb-3" style="display: flex; justify-content: center; margin-top: 48px;">
+			<h3 id="deskripsi-app" class="text-center mb-1">
+				Kategori barang & kategori aksi pada aplikasi <span class="section-title">Barangku </span>:
+			</h3>
+		</div>
+		<div class="row gy-3">
+			<div class="col-sm-6 col-lg-6">
+				<div class="card border border-label-primary shadow-none" style="height: 24rem; overflow: hidden;">
+					<div class="card-body">
+						<h4 class="mb-2 text-primary hero-title fw-bold text-center">Kategori Barang</h4>
+						<p class="fw-medium mb-0">
+						<ul>
+							<li>Elektronik</li>
+							<li>Fashion</li>
+							<li>Kecantikan</li>
+							<li>Kesehatan</li>
+							<li>Kuliner</li>
+							<li>Office</li>
+							<li>Olahraga</li>
+							<li>Otomotif</li>
+							<li>Pendidikan</li>
+							<li>Peralatan</li>
+							<li>Opsi Lainnya</li>
+						</ul>
+						</p>
+						<p>
+							Note : khusus “Opsi Lainnya” pengguna dapat menginput kategori sesuai keinginan.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-lg-6">
+				<div class="card border border-label-primary shadow-none" style="height: 24rem; overflow: hidden;">
+					<div class="card-body">
+						<h4 class="mb-2 text-primary hero-title fw-bold text-center">Kategori Aksi</h4>
+						<p class="fw-medium mb-0">
+						<ul>
+							<li>Dibeli</li>
+							<li>Dijual</li>
+							<li>Disedekahkan</li>
+							<li>Diberikan</li>
+							<li>Dihadiahkan</li>
+							<li>Dibuang</li>
+							<li>Dipinjamkan</li>
+							<li>Diperbaiki</li>
+							<li>Dikembalikan</li>
+							<li>Dipindahkan</li>
+							<li>Diambil</li>
+						</ul>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section-py position-relative p-lg-0 pb-0 bg-body" style="margin-top: 4rem;">
+		<div class="container">
+			<div class="row align-items-center gy-5 gy-lg-0">
+				<div class="col-lg-6 text-center text-lg-start">
+					<h6 class="h2 text-primary fw-bold mb-1">Fitur Aksi Barang</h6>
+					<p class="fw-medium mb-4">Fitur ini membantu Anda mencatat dan mengelola barang berdasarkan aksi yang akan
+						dilakukan terhadapnya. Catat barang-barang Anda dan rencanakan apa yang ingin Anda lakukan dengannya, baik itu
+						menjualnya, meminjamkannya, atau membuangnya</p>
+				</div>
+				<div class="col-lg-6 py-lg-4 text-center text-lg-end">
+					<img src="{{ asset('vuexy/assets/img/front-pages/landing-page/view_aksi.png') }}" alt="cta dashboard"
+						class="img-fluid" width="50%">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-py position-relative p-lg-0 pb-0">
+		<div class="container">
+			<div class="row align-items-center gy-5 gy-lg-0">
+				<div class="col-lg-6 text-center text-lg-start py-lg-4">
+					<img src="{{ asset('vuexy/assets/img/front-pages/landing-page/view_letak.png') }}" alt="cta dashboard"
+						class="img-fluid" width="50%">
+
+				</div>
+				<div class="col-lg-6 text-center text-lg-end">
+					<h6 class="h2 text-primary fw-bold mb-1">Fitur Letak Barang</h6>
+					<p class="fw-medium mb-4">Fitur ini membantu Anda melacak dan menemukan barang dengan mudah. Anda dapat menandai
+						lokasi barang-barang Anda, sehingga Anda tidak akan kehilangannya lagi. Fitur ini membantu Anda lebih terorganisir
+						dan mengurangi kekacauan</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-py position-relative p-lg-0 pb-0 bg-body">
+		<div class="container">
+			<div class="row align-items-center gy-5 gy-lg-0">
+				<div class="col-lg-6 text-center text-lg-start">
+					<h6 class="h2 text-primary fw-bold mb-1">Fitur Galeri</h6>
+					<p class="fw-medium mb-4">Fitur ini membantu Anda melihat semua barang yang telah
+						ditambahkan dengan lebih intuitif. Anda dapat melihat foto, nama, dan detail penting lainnya dengan mudah. Fitur
+						ini membantu Anda menemukan barang yang Anda butuhkan dengan cepat dan mengatur koleksi Anda dengan lebih efektif
+					</p>
+				</div>
+				<div class="col-lg-6 py-lg-4 text-center text-lg-end">
+					<img src="{{ asset('vuexy/assets/img/front-pages/landing-page/view_galeri.png') }}" alt="cta dashboard"
+						class="img-fluid" width="50%">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section-py position-relative p-lg-0 pb-0">
+		<div class="container">
+			<div class="row align-items-center gy-5 gy-lg-0">
+				<div class="col-lg-6 text-center text-lg-start py-lg-4">
+					<img src="{{ asset('vuexy/assets/img/front-pages/landing-page/view_statistik.png') }}" alt="cta dashboard"
+						class="img-fluid" width="50%">
+
+				</div>
+				<div class="col-lg-6 text-center text-lg-end">
+					<h6 class="h2 text-primary fw-bold mb-1">Fitur Statistik</h6>
+					<p class="fw-medium mb-4">Fitur ini menghadirkan visualisasi data yang menarik dan
+						terperinci tentang koleksi Anda. Lihat jumlah barang Anda dalam bentuk grafik dan angka yang mudah dipahami. Fitur
+						ini membantu Anda melacak perubahan koleksi Anda dari waktu ke waktu dan membuat keputusan yang lebih tepat dalam
+						mengelola barang-barang Anda</p>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>
 <!-- Useful features: End -->
 
-<section id="landingFunFacts" class="section-py bg-body landing-fun-facts">
-	<div class="container">
-		<div class="mb-3" style="display: flex; justify-content: center;">
+{{-- <section id="landingFunFacts" class="section-py bg-body landing-fun-facts"> --}}
+{{-- <div class="container"> --}}
+{{-- <div class="mb-3" style="display: flex; justify-content: center;">
 			<h3 id="deskripsi-app" class="text-center mb-1">
 				Pengguna aplikasi <span class="section-title">Barangku </span> dapat mencatat (menginput) data rencana aksi terhadap
 				suatu barang berupa :
 			</h3>
-		</div>
-		<div class="row gy-3">
+		</div> --}}
+{{-- <div class="row gy-3">
 			<div class="col-sm-6 col-lg-3">
 				<div class="card border border-label-primary shadow-none" style="height: 14rem; overflow: hidden;">
 					<div class="card-body text-center">
@@ -192,8 +336,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="mb-3" style="display: flex; justify-content: center; margin-top: 48px;">
+		</div> --}}
+{{-- <div class="mb-3" style="display: flex; justify-content: center; margin-top: 48px;">
 			<h3 id="deskripsi-app" class="text-center mb-1">
 				Kategori barang & kategori rencana aksi pada aplikasi <span class="section-title">Barangku </span>:
 			</h3>
@@ -246,9 +390,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
+		</div> --}}
+{{-- </div> --}}
+{{-- </section> --}}
 
 <!-- Real customers reviews: Start -->
 {{-- <section class="section-py bg-body landing-reviews pb-0"> --}}
